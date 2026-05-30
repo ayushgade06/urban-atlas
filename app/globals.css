@@ -1,33 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #222222;
-  --primary: #FF385C;
-  --primary-hover: #E31C5F;
-  --secondary: #F7F7F7;
-  --muted: #6A6A6A;
+  --coral: #FF385C;
+  --coral-hover: #E31C5F;
+  --bg: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --text-primary: #222222;
+  --text-secondary: #6A6A6A;
   --border: #EBEBEB;
 }
 
 @theme {
-  --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
-  --color-secondary: var(--secondary);
-  --color-muted: var(--muted);
-  --color-border-custom: var(--border);
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --color-coral: #FF385C;
+  --color-coral-hover: #E31C5F;
+  --color-bg-secondary: #F7F7F7;
+  --font-jakarta: var(--font-jakarta), system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Base resets & typography overrides */
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+* {
+  box-sizing: border-box;
 }
 
-/* Custom premium scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -43,36 +51,81 @@ body {
   background: #a8a8a8;
 }
 
-/* Custom shadow utilities to keep visual weight light and premium */
+/* Shadow utilities */
 .premium-shadow {
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 8px -1px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 8px -1px rgba(0, 0, 0, 0.04);
 }
-
 .premium-shadow-sm {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
-
 .premium-shadow-lg {
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Custom utility for half-weight thin borders */
+/* Border utilities */
 .border-half {
-  border: 1px solid rgba(235, 235, 235, 0.5);
+  border: 1px solid rgba(235, 235, 235, 0.8);
 }
-
 .border-b-half {
-  border-bottom: 1px solid rgba(235, 235, 235, 0.5);
+  border-bottom: 1px solid rgba(235, 235, 235, 0.8);
 }
-
 .border-t-half {
-  border-top: 1px solid rgba(235, 235, 235, 0.5);
+  border-top: 1px solid rgba(235, 235, 235, 0.8);
 }
-
 .border-r-half {
-  border-right: 1px solid rgba(235, 235, 235, 0.5);
+  border-right: 1px solid rgba(235, 235, 235, 0.8);
+}
+.border-l-half {
+  border-left: 1px solid rgba(235, 235, 235, 0.8);
 }
 
-.border-l-half {
-  border-left: 1px solid rgba(235, 235, 235, 0.5);
+/* Typography base */
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+}
+
+/* Section label utility */
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--coral);
+}
+
+/* Button utility classes */
+.coral-btn {
+  background-color: var(--coral);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.coral-btn:hover {
+  background-color: var(--coral-hover);
+}
+.outline-btn {
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.outline-btn:hover {
+  border-color: var(--text-primary);
 }
