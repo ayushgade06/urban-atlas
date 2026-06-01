@@ -17,6 +17,21 @@
   --font-jakarta: var(--font-jakarta), system-ui, sans-serif;
   --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* Brand tokens */
+  --color-brand: #FF2D55;
+  --color-brand-light: #FFE8ED;
+  --color-brand-lighter: #FFF5F7;
+  --color-brand-faint: #FCECEF;
+
+  /* Ink tokens */
+  --color-ink: #0F172A;
+  --color-ink-mid: #334155;
+  --color-ink-soft: #64748B;
+
+  /* Custom border radius */
+  --radius-card: 24px;
+  --radius-inner: 16px;
 }
 
 * {

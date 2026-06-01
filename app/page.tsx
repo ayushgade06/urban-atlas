@@ -1,49 +1,54 @@
-import React from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import ProblemSection from "@/components/ProblemSection";
-import WorkflowSection from "@/components/WorkflowSection";
-import LocalitiesSection from "@/components/LocalitiesSection";
-import SignalsSection from "@/components/SignalsSection";
-import BrokerSection from "@/components/BrokerSection";
-import CommunitySection from "@/components/CommunitySection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
+import type { Metadata } from 'next'
+import Navbar        from '@/components/Navbar'
+import Hero          from '@/components/Hero'
+import Localities    from '@/components/localities'
+import HowItWorks    from '@/components/how-it-works'
+import DemandSection from '@/components/demand-section'
+import FeatureCards  from '@/components/feature-cards'
+import TrustSection  from '@/components/trust-section'
+import MediaSection  from '@/components/media-section'
+import BrokerSection from '@/components/broker-section'
+import CtaBanner     from '@/components/cta-banner'
+import Footer        from '@/components/Footer'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Urban Atlas | Lucknow Real Estate Intelligence',
+  description:
+    'Connecting plot owners with serious buyers in Lucknow. Submit your plot for free and reach genuine buyers across Gomti Nagar, Sushant Golf City, Vrindavan Yojana and more.',
+  keywords: [
+    'Lucknow real estate',
+    'LDA plots Lucknow',
+    'plot buyers Lucknow',
+    'Gomti Nagar plots',
+    'resale plots Lucknow',
+    'Urban Atlas',
+  ],
+  authors: [{ name: 'Urban Atlas' }],
+  openGraph: {
+    title: 'Urban Atlas | Lucknow Real Estate Intelligence',
+    description:
+      'Connecting plot owners with serious buyers in Lucknow.',
+    url: 'https://urbanatlas.in',
+    siteName: 'Urban Atlas',
+    locale: 'en_IN',
+    type: 'website',
+  },
+}
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      {/* 1. NAVBAR */}
+    <main className="min-h-screen bg-white font-sans antialiased">
       <Navbar />
-
-      <main className="flex-grow">
-        {/* 2. HERO */}
-        <Hero />
-
-        {/* 3. PROBLEM */}
-        <ProblemSection />
-
-        {/* 4. WORKFLOW */}
-        <WorkflowSection />
-
-        {/* 5. LOCALITIES */}
-        <LocalitiesSection />
-
-        {/* 6. SIGNALS */}
-        <SignalsSection />
-
-        {/* 7. BROKER */}
-        <BrokerSection />
-
-        {/* 8. COMMUNITY */}
-        <CommunitySection />
-
-        {/* 9. CTA */}
-        <CTASection />
-      </main>
-
-      {/* 10. FOOTER */}
+      <Hero />
+      <Localities />
+      <HowItWorks />
+      <DemandSection />
+      <FeatureCards />
+      <TrustSection />
+      <MediaSection />
+      <BrokerSection />
+      <CtaBanner />
       <Footer />
-    </div>
-  );
+    </main>
+  )
 }
