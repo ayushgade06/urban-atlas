@@ -7,7 +7,6 @@ import DemandSection from '@/components/demand-section'
 import FeatureCards  from '@/components/feature-cards'
 import TrustSection  from '@/components/trust-section'
 import MediaSection  from '@/components/media-section'
-import BrokerSection from '@/components/broker-section'
 import CtaBanner     from '@/components/cta-banner'
 import Footer        from '@/components/Footer'
 
@@ -46,7 +45,6 @@ export default function HomePage() {
       <FeatureCards />
       <TrustSection />
       <MediaSection />
-      <BrokerSection />
       <CtaBanner />
       <Footer />
     </main>

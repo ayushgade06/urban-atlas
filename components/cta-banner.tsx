@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageCircle } from 'lucide-react'
-import { FadeUp } from '@/components/fade-up'
+import { ArrowRight } from 'lucide-react'
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -14,41 +13,45 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function CtaBanner() {
   return (
-    <section className="px-6 py-12 bg-white">
-      <FadeUp>
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-r from-brand to-[#e8001e] rounded-[2rem] px-8 py-14 text-center">
-            <h2 className="text-3xl font-bold text-white mb-2">Ready to Sell Your Plot?</h2>
-            <p className="text-white/80 text-sm mb-8">
-              Submit your property today and get connected with genuine buyers.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="#submit-plot"
-                id="cta-banner-submit"
-                className="inline-flex items-center justify-center gap-2 bg-white text-brand rounded-full px-7 py-3 font-semibold text-sm hover:bg-brand-lighter transition-all"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                Submit Your Plot
-                <ArrowRight className="h-4 w-4" />
-              </motion.a>
-              <motion.a
-                href="https://wa.me/910000000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="cta-banner-buyer-circle"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white rounded-full px-7 py-3 font-semibold text-sm hover:bg-white/10 transition-all"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <WhatsAppIcon className="h-4 w-4 text-white" />
-                Join Buyer Circle
-              </motion.a>
-            </div>
+    <section className="px-6 py-12 bg-white w-full" id="cta-banner">
+      <div className="max-w-[1240px] mx-auto relative overflow-hidden rounded-[20px] bg-gradient-to-r from-[#FF2D3F] to-[#E81F34] shadow-[0px_10px_40px_rgba(255,45,63,0.15)]">
+        {/* Subtle cityscape outline silhouette in the background */}
+        <div className="absolute bottom-0 left-0 right-0 h-[100px] opacity-[0.05] pointer-events-none select-none z-0">
+          <svg width="100%" height="100%" viewBox="0 0 500 100" fill="white" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 100 V70 H15 V100 H20 V80 H35 V100 H40 V50 H65 V100 H75 V85 H85 V100 H90 V45 H120 V100 H130 V75 H145 V100 H155 V35 H190 V100 H200 V65 H220 V100 H235 V55 H260 V100 H270 V85 H280 V100 H285 V40 H320 V100 H330 V70 H350 V100 H365 V50 H395 V100 H410 V85 H420 V100 H425 V45 H455 V100 H465 V80 H480 V100 H490 V30 H500 V100 Z" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 px-8 py-16 text-center max-w-3xl mx-auto flex flex-col items-center">
+          <h2 className="text-[34px] md:text-[40px] font-extrabold text-white mb-2 leading-tight tracking-tight">
+            Ready to Sell Your Plot?
+          </h2>
+          <p className="text-white/90 text-[15px] font-bold mb-10 max-w-lg leading-relaxed">
+            Submit your property today and get connected with genuine buyers.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+            <motion.a
+              href="#submit-plot"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#FF2D3F] hover:bg-[#FFF1F3] rounded-[14px] px-8 py-4 font-black text-[15px] transition-all duration-200 premium-shadow"
+              whileHover={{ y: -2 }}
+              whileTap={{ y: 0 }}
+            >
+              Submit Your Plot
+              <ArrowRight className="h-4 w-4 stroke-[3]" />
+            </motion.a>
+            <motion.a
+              href="#buyer-circle"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white rounded-[14px] px-8 py-4 font-extrabold text-[15px] hover:bg-white/10 transition-all duration-200"
+              whileHover={{ y: -2 }}
+              whileTap={{ y: 0 }}
+            >
+              <WhatsAppIcon className="h-5 w-5 text-white mr-1" />
+              Join Buyer Circle
+            </motion.a>
           </div>
         </div>
-      </FadeUp>
+      </div>
     </section>
   )
 }

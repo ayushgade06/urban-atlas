@@ -1,37 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --coral: #FF385C;
-  --coral-hover: #E31C5F;
+  --brand: #FF2D3F;
+  --brand-hover: #E81F34;
+  --brand-light: #FFF1F3;
   --bg: #FFFFFF;
-  --bg-secondary: #F7F7F7;
-  --text-primary: #222222;
-  --text-secondary: #6A6A6A;
-  --border: #EBEBEB;
+  --text-heading: #111827;
+  --text-body: #4B5563;
+  --text-muted: #6B7280;
+  --border: #F3F4F6;
 }
 
 @theme {
-  --color-coral: #FF385C;
-  --color-coral-hover: #E31C5F;
-  --color-bg-secondary: #F7F7F7;
-  --font-jakarta: var(--font-jakarta), system-ui, sans-serif;
-  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --color-brand: #FF2D3F;
+  --color-brand-hover: #E81F34;
+  --color-brand-light: #FFF1F3;
+  --color-heading: #111827;
+  --color-body: #4B5563;
+  --color-muted: #6B7280;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
-  /* Brand tokens */
-  --color-brand: #FF2D55;
-  --color-brand-light: #FFE8ED;
-  --color-brand-lighter: #FFF5F7;
-  --color-brand-faint: #FCECEF;
-
-  /* Ink tokens */
-  --color-ink: #0F172A;
-  --color-ink-mid: #334155;
-  --color-ink-soft: #64748B;
-
   /* Custom border radius */
-  --radius-card: 24px;
-  --radius-inner: 16px;
+  --radius-card: 20px;
+  --radius-btn: 14px;
 }
 
 * {
@@ -43,8 +35,8 @@ html {
 }
 
 body {
-  font-family: var(--font-jakarta), system-ui, sans-serif;
-  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: var(--text-body);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -68,13 +60,7 @@ body {
 
 /* Shadow utilities */
 .premium-shadow {
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 8px -1px rgba(0, 0, 0, 0.04);
-}
-.premium-shadow-sm {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-.premium-shadow-lg {
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.06);
 }
 
 /* Border utilities */

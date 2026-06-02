@@ -1,8 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle2, MessageCircle, ArrowRight } from 'lucide-react'
-import { FadeUp } from '@/components/fade-up'
+import { ArrowRight } from 'lucide-react'
+
+// Custom SVGs for checklist indicators
+function CheckmarkIcon({ color }: { color: string }) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  )
+}
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -12,185 +20,224 @@ function WhatsAppIcon({ className }: { className?: string }) {
   )
 }
 
-// Mock WhatsApp chat messages
-const chatMessages = [
-  {
-    text: 'New plot available in Gomti Nagar Extension. 1800sqft, Park Facing.',
-    time: '9:41 AM',
-    type: 'received',
-  },
-  {
-    text: 'Sushant Golf City, 1500sqft. Wide Road Frontage.',
-    time: '11:02 AM',
-    type: 'received',
-  },
-  {
-    text: 'Awadh Vihar Yojana, 1200 sqft. Wide Facing.',
-    time: '2:14 PM',
-    type: 'received',
-  },
-]
+// 1. Isometric Wireframe House SVG
+function IsometricHouseSVG() {
+  return (
+    <svg width="130" height="130" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-2 right-2 opacity-80 pointer-events-none select-none z-0">
+      {/* Front Face Wireframe */}
+      <path d="M20 75L60 95V55L20 35V75Z" stroke="#FF2D3F" strokeWidth="1.5" strokeLinejoin="round" />
+      {/* Right Side Wireframe */}
+      <path d="M60 95L100 75V35L60 55V95Z" stroke="#FF2D3F" strokeWidth="1.5" strokeLinejoin="round" />
+      {/* Roof Wireframes */}
+      <path d="M20 35L60 15L100 35L60 55L20 35Z" stroke="#FF2D3F" strokeWidth="1.5" strokeLinejoin="round" />
+      {/* Extra interior/door lines for detailed architectural grid */}
+      <line x1="35" y1="82.5" x2="35" y2="52.5" stroke="#FF2D3F" strokeWidth="1" strokeDasharray="2 2" />
+      <line x1="45" y1="87.5" x2="45" y2="57.5" stroke="#FF2D3F" strokeWidth="1" strokeDasharray="2 2" />
+      <line x1="75" y1="82.5" x2="75" y2="52.5" stroke="#FF2D3F" strokeWidth="1" strokeDasharray="2 2" />
+      <line x1="85" y1="77.5" x2="85" y2="47.5" stroke="#FF2D3F" strokeWidth="1" strokeDasharray="2 2" />
+      {/* Dynamic connecting nodes */}
+      <circle cx="20" cy="75" r="3" fill="#FF2D3F" />
+      <circle cx="60" cy="95" r="3" fill="#FF2D3F" />
+      <circle cx="100" cy="75" r="3" fill="#FF2D3F" />
+      <circle cx="60" cy="15" r="3" fill="#FF2D3F" />
+    </svg>
+  )
+}
+
+// 2. Translucent Isometric Valuation Sheets
+function IsometricSheetsSVG() {
+  return (
+    <svg width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-2 right-2 opacity-85 pointer-events-none select-none z-0">
+      {/* Sheet 1 (Bottom Layer) */}
+      <path d="M20 75 L60 95 L100 75 L60 55 Z" fill="rgba(124, 58, 237, 0.08)" stroke="rgba(124, 58, 237, 0.4)" strokeWidth="1.5" />
+      {/* Sheet 2 (Middle Layer) */}
+      <path d="M20 58 L60 78 L100 58 L60 38 Z" fill="rgba(124, 58, 237, 0.15)" stroke="rgba(124, 58, 237, 0.6)" strokeWidth="1.5" />
+      {/* Sheet 3 (Top Layer) */}
+      <path d="M20 41 L60 61 L100 41 L60 21 Z" fill="rgba(124, 58, 237, 0.28)" stroke="#7C3AED" strokeWidth="2" />
+      {/* Detailed metrics nodes */}
+      <line x1="60" y1="21" x2="60" y2="95" stroke="#7C3AED" strokeWidth="1" strokeDasharray="3 3" />
+      <circle cx="60" cy="61" r="2.5" fill="#7C3AED" />
+      <circle cx="60" cy="41" r="2.5" fill="#7C3AED" />
+    </svg>
+  )
+}
 
 export default function FeatureCards() {
   return (
-    <section className="py-16 bg-gray-50/60" id="features">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
+    <section className="py-[74px] bg-[#FFFDFD] w-full" id="features">
+      <div className="max-w-[1240px] mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {/* Card 1 — Sell Your Plot */}
-          <FadeUp delay={0}>
-            <motion.div
-              className="relative bg-white border border-gray-100 rounded-card p-8 shadow-sm h-full flex flex-col overflow-hidden"
-              whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(255,45,85,0.10)' }}
-              transition={{ duration: 0.22 }}
-            >
-              {/* Decorative home icon bottom-right */}
-              <div className="absolute bottom-4 right-4 opacity-5 pointer-events-none">
-                <svg width="100" height="100" viewBox="0 0 24 24" fill="#FF2D55">
-                  <path d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" />
-                </svg>
-              </div>
-
-              <p className="text-brand text-xs font-bold uppercase tracking-wider mb-2">Sell Your Plot</p>
-              <h3 className="text-2xl font-bold text-ink mb-5">Own a plot?</h3>
-
-              <ul className="space-y-3 flex-1">
+          <motion.div
+            className="relative bg-gradient-to-b from-[#FFFDFD] to-[#FFF5F6] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden min-h-[460px] h-full"
+            whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}
+            transition={{ duration: 0.22 }}
+          >
+            <div className="relative z-10 flex flex-col items-start w-full">
+              <span className="text-[#FF2D3F] text-[12px] font-extrabold uppercase tracking-wider mb-2 bg-[#FFF1F3] px-3 py-1.5 rounded-full">
+                Sell Your Plot
+              </span>
+              <h3 className="text-[28px] font-extrabold text-[#111827] mb-6 leading-tight">
+                Own a plot?
+              </h3>
+              <ul className="space-y-3.5 w-full">
                 {[
                   'Connect with serious buyers',
                   'No brokerage commitment',
                   'Free & easy submission',
                   'Market guidance included',
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-ink-mid">
-                    <CheckCircle2 className="h-4 w-4 text-brand flex-shrink-0" />
-                    {item}
+                  <li key={item} className="flex items-start gap-2.5 text-[14px] font-bold text-[#4B5563]">
+                    <CheckmarkIcon color="#FF2D3F" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
+            </div>
 
+            <div className="relative z-10 mt-8 flex flex-col items-start w-full">
               <motion.a
                 href="#submit-plot"
-                id="feature-sell-cta"
-                className="mt-7 inline-flex items-center gap-2 bg-brand text-white rounded-full px-6 py-2.5 text-sm font-semibold self-start"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-2 bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] px-6 py-3.5 text-[14px] font-extrabold transition-all duration-200 premium-shadow"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Submit Plot Details
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 stroke-[3]" />
               </motion.a>
-            </motion.div>
-          </FadeUp>
+            </div>
+
+            {/* Decorative isometric wireframe house */}
+            <IsometricHouseSVG />
+          </motion.div>
 
           {/* Card 2 — Buyer Circle */}
-          <FadeUp delay={0.1}>
-            <motion.div
-              className="relative bg-[#0d1f0d] rounded-card p-8 h-full flex flex-col overflow-hidden"
-              whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.25)' }}
-              transition={{ duration: 0.22 }}
-            >
-              <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">Buyer Circle</p>
-              <h3 className="text-2xl font-bold text-white mb-5">Join our Buyer Network</h3>
+          <motion.div
+            className="relative bg-gradient-to-b from-[#FDFFFD] to-[#F1FAF4] border border-[#E6F4EA] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden min-h-[460px] h-full"
+            whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(37,211,102,0.06)' }}
+            transition={{ duration: 0.22 }}
+          >
+            <div className="relative z-10 flex flex-col items-start w-full">
+              <span className="text-[#137333] text-[12px] font-extrabold uppercase tracking-wider mb-2 bg-[#E6F4EA] px-3 py-1.5 rounded-full">
+                Buyer Circle
+              </span>
+              <h3 className="text-[28px] font-extrabold text-[#111827] mb-6 leading-tight">
+                Join our Buyer Network
+              </h3>
 
-              <ul className="space-y-3">
-                {[
-                  'Get early access to selected plots',
-                  'WhatsApp updates',
-                  'Focused & verified buyers',
-                  'No spam, only relevant opportunities',
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Mock WhatsApp Chat */}
-              <div className="mt-5 rounded-inner bg-[#1a3a1a] border border-green-900/30 p-3 flex-1">
-                {/* Chat header */}
-                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-green-900/30">
-                  <div className="w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center">
-                    <WhatsAppIcon className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white text-xs font-semibold">Urban Atlas Buyer Circle</div>
-                    <div className="text-green-400 text-[10px]">342 members</div>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  {chatMessages.map((msg, i) => (
-                    <div key={i} className="bg-[#0d2a0d] rounded-lg p-2">
-                      <p className="text-gray-200 text-[11px] leading-relaxed">{msg.text}</p>
-                      <p className="text-green-500 text-[9px] mt-1 text-right">{msg.time}</p>
-                    </div>
+              {/* Side by side layout for text + checklist and phone mockup inside card */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-start">
+                <ul className="space-y-3.5">
+                  {[
+                    'Get early access to selected plots',
+                    'WhatsApp updates',
+                    'Focused & verified buyers',
+                    'No spam, only relevant opportunities',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-[14px] font-bold text-[#4B5563]">
+                      <CheckmarkIcon color="#137333" />
+                      <span>{item}</span>
+                    </li>
                   ))}
-                </div>
-                <div className="mt-2 rounded-full bg-[#0d2a0d] border border-green-900/30 px-3 py-1.5 flex items-center gap-2">
-                  <span className="text-gray-500 text-[11px] flex-1">Type a message...</span>
-                  <WhatsAppIcon className="h-3.5 w-3.5 text-emerald-400" />
+                </ul>
+
+                {/* WhatsApp Phone Mockup exactly matching screenshot message requirements */}
+                <div className="rounded-[18px] bg-white border border-[#E0E0E0] shadow-sm flex flex-col overflow-hidden max-w-[210px] w-full mx-auto md:ml-auto">
+                  {/* Phone Header */}
+                  <div className="bg-[#075E54] text-white p-2 flex items-center gap-1.5 leading-none">
+                    <div className="w-5 h-5 rounded-full bg-[#128C7E] flex items-center justify-center flex-shrink-0">
+                      <WhatsAppIcon className="h-3 w-3 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold">Urban Atlas - Buyer Circle</div>
+                      <div className="text-[7px] text-[#A6D9D4] mt-0.5">88 members, online</div>
+                    </div>
+                  </div>
+                  {/* Messages container */}
+                  <div className="bg-[#ECE5DD] p-2 space-y-1.5 min-h-[140px] flex flex-col justify-end text-[9px] font-medium leading-normal">
+                    {/* Message 1 */}
+                    <div className="bg-[#DCF8C6] rounded-md p-1.5 self-start max-w-[90%] shadow-sm">
+                      <p className="text-[#333333]">New plot available in Gomti Nagar Extension. 1800 sq.ft., Park Facing</p>
+                      <p className="text-[6px] text-gray-500 text-right mt-0.5">10:24 AM</p>
+                    </div>
+                    {/* Message 2 */}
+                    <div className="bg-white rounded-md p-1.5 self-start max-w-[90%] shadow-sm">
+                      <p className="text-[#333333]">Corner plot in Sushant Golf City. 1500 sq.ft.</p>
+                      <p className="text-[6px] text-gray-500 text-right mt-0.5">11:30 AM</p>
+                    </div>
+                    {/* Message 3 */}
+                    <div className="bg-[#DCF8C6] rounded-md p-1.5 self-start max-w-[90%] shadow-sm">
+                      <p className="text-[#333333]">New opportunity in Aashiyana. 1200 sq.ft., West Facing</p>
+                      <p className="text-[6px] text-gray-500 text-right mt-0.5">02:44 PM</p>
+                    </div>
+                  </div>
+                  {/* Input bar */}
+                  <div className="bg-[#F4F4F4] p-1.5 flex items-center gap-1 border-t border-gray-200">
+                    <div className="bg-white rounded-full px-2 py-0.5 text-[8px] text-gray-400 flex-1">Type a message</div>
+                    <div className="w-3.5 h-3.5 rounded-full bg-[#075E54] flex items-center justify-center flex-shrink-0">
+                      <WhatsAppIcon className="h-2 w-2 text-white" />
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
 
+            <div className="relative z-10 mt-8 flex flex-col items-start w-full">
               <motion.a
-                href="https://wa.me/910000000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="feature-buyer-circle-cta"
-                className="mt-5 inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-2.5 text-sm font-semibold self-start transition-colors"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                href="#buyer-circle"
+                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-[14px] px-6 py-3.5 text-[14px] font-extrabold transition-all duration-200 premium-shadow"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <WhatsAppIcon className="h-4 w-4" />
+                <WhatsAppIcon className="h-4 w-4 text-white" />
                 Join WhatsApp Group
               </motion.a>
-            </motion.div>
-          </FadeUp>
+            </div>
+          </motion.div>
 
           {/* Card 3 — Free Valuation */}
-          <FadeUp delay={0.2}>
-            <motion.div
-              className="relative bg-[#0f0f1e] rounded-card p-8 h-full flex flex-col overflow-hidden"
-              whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(124,58,237,0.2)' }}
-              transition={{ duration: 0.22 }}
-            >
-              {/* Purple cube illustration */}
-              <div className="absolute bottom-6 right-6 opacity-20 pointer-events-none">
-                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                  <path d="M40 8L72 24V56L40 72L8 56V24L40 8Z" stroke="#7C3AED" strokeWidth="2" fill="none"/>
-                  <path d="M40 8V72M8 24L40 40L72 24M40 40L8 56M40 40L72 56" stroke="#7C3AED" strokeWidth="1.5" strokeDasharray="4 2"/>
-                </svg>
-              </div>
-
-              <p className="text-purple-400 text-xs font-bold uppercase tracking-wider mb-2">Free Valuation</p>
-              <h3 className="text-2xl font-bold text-white mb-5">Not sure what your plot is worth?</h3>
-
-              <ul className="space-y-3 flex-1">
+          <motion.div
+            className="relative bg-gradient-to-b from-[#FCFDFD] to-[#F5F5FC] border border-[#ECECF9] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden min-h-[460px] h-full"
+            whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(124,58,237,0.06)' }}
+            transition={{ duration: 0.22 }}
+          >
+            <div className="relative z-10 flex flex-col items-start w-full">
+              <span className="text-[#6D28D9] text-[12px] font-extrabold uppercase tracking-wider mb-2 bg-[#EDE9FE] px-3 py-1.5 rounded-full">
+                Free Valuation
+              </span>
+              <h3 className="text-[28px] font-extrabold text-[#111827] mb-6 leading-tight">
+                Not sure what your plot is worth?
+              </h3>
+              <ul className="space-y-3.5 w-full">
                 {[
                   'Instant market assessment',
                   'Location & size analysis',
                   'Road width & surroundings',
                   'Current resale activity',
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-300">
-                    <CheckCircle2 className="h-4 w-4 text-purple-400 flex-shrink-0" />
-                    {item}
+                  <li key={item} className="flex items-start gap-2.5 text-[14px] font-bold text-[#4B5563]">
+                    <CheckmarkIcon color="#6D28D9" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
+            </div>
 
+            <div className="relative z-10 mt-8 flex flex-col items-start w-full">
               <motion.a
                 href="#valuation"
-                id="feature-valuation-cta"
-                className="mt-7 inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white rounded-full px-6 py-2.5 text-sm font-semibold self-start transition-colors"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-2 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-[14px] px-6 py-3.5 text-[14px] font-extrabold transition-all duration-200 premium-shadow"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Get Free Valuation
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 stroke-[3]" />
               </motion.a>
-            </motion.div>
-          </FadeUp>
+            </div>
 
+            {/* Decorative Translucent Isometric purple layers */}
+            <IsometricSheetsSVG />
+          </motion.div>
         </div>
       </div>
     </section>

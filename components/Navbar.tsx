@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { MessageCircle, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Logo } from '@/components/logo'
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -32,71 +32,68 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 w-full ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm'
-          : 'bg-white/80 backdrop-blur-md border-b border-gray-100'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[#F3F4F6] shadow-[0px_4px_20px_rgba(0,0,0,0.02)]'
+          : 'bg-white border-b border-[#F3F4F6]'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" aria-label="Urban Atlas home">
-            <Logo />
-          </Link>
+      <div className="max-w-[1240px] mx-auto px-6 h-20 flex items-center justify-between">
+        {/* Left Side Brand Logo */}
+        <Link href="/" className="hover:opacity-95 transition-opacity">
+          <Logo showTagline={true} />
+        </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-7" aria-label="Main navigation">
+        {/* Center / Right Links and CTA */}
+        <div className="hidden lg:flex items-center gap-9">
+          <nav className="flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
-                className="flex items-center gap-1.5 text-sm font-medium text-ink-mid hover:text-brand transition-colors duration-200"
+                className="flex items-center gap-1.5 text-[14px] font-semibold text-[#4B5563] hover:text-[#FF2D3F] transition-colors duration-200"
               >
-                {link.whatsapp && <WhatsAppIcon className="h-3.5 w-3.5 text-[#25D366]" />}
+                {link.whatsapp && (
+                  <WhatsAppIcon className="h-[15px] w-[15px] text-[#25D366]" />
+                )}
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden sm:flex items-center gap-3">
-            <Link
-              href="#submit-plot"
-              className="bg-brand text-white rounded-full px-5 py-2 text-sm font-semibold hover:bg-[#e0001e] transition-all duration-200 shadow-sm hover:shadow-md"
-            >
-              Submit Plot
-            </Link>
-          </div>
-
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex lg:hidden p-2 rounded-full hover:bg-gray-100 text-ink transition-colors focus:outline-none"
-            aria-label="Toggle mobile menu"
-            aria-expanded={mobileOpen}
+          {/* Red CTA Button - Submit Plot */}
+          <Link
+            href="#submit-plot"
+            className="bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] px-[22px] py-[11px] text-[14px] font-bold transition-all duration-200 premium-shadow"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+            Submit Plot
+          </Link>
         </div>
+
+        {/* Mobile menu trigger */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="lg:hidden p-2 rounded-xl hover:bg-gray-50 text-[#111827]"
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="bg-white border-t border-gray-100 px-6 py-5 flex flex-col gap-4">
-          <nav className="flex flex-col gap-1">
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-5 flex flex-col gap-4 absolute top-20 left-0 w-full shadow-lg">
+          <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2 text-sm font-medium text-ink-mid hover:text-brand py-2.5 border-b border-gray-50 transition-colors"
+                className="flex items-center gap-2.5 text-base font-semibold text-[#4B5563] py-2.5 border-b border-gray-50 hover:text-[#FF2D3F] transition-colors"
               >
-                {link.whatsapp && <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />}
+                {link.whatsapp && (
+                  <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
+                )}
                 {link.label}
               </Link>
             ))}
@@ -104,12 +101,12 @@ export default function Navbar() {
           <Link
             href="#submit-plot"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center bg-brand text-white rounded-full py-3 text-sm font-semibold hover:bg-[#e0001e] transition-all"
+            className="flex items-center justify-center bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] py-3.5 text-base font-bold transition-all"
           >
             Submit Plot
           </Link>
         </div>
-      </div>
+      )}
     </header>
   )
 }
