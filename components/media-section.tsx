@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 // Custom matching red SVG Icons for the 5 research trends
 function TrendIcon1() {
@@ -166,7 +167,17 @@ export default function MediaSection() {
                   Partner with us and get quality buyer leads via WhatsApp &amp; other channels.
                 </p>
                 <div className="w-full flex justify-center py-2">
-                  <HandshakeCircularSVG />
+                  {/* <HandshakeCircularSVG /> */}
+
+                  <div className="relative w-[140px] h-[140px]">
+                    <Image
+                      src="/handshake.png"
+                      alt="Handshake"
+                      fill
+                      priority
+                      className="object-contain"
+                    />
+                </div>
                 </div>
               </div>
 

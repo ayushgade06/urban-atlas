@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 // Custom SVG Icons matching screenshot precisely
 function MapPinIcon({ className }: { className?: string }) {
@@ -78,73 +79,18 @@ export default function Hero() {
       {/* Visual backdrop gradient to replicate the exact layout proportions */}
       <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-b from-[#FFFDFD] to-[#FFF8F8] opacity-60 pointer-events-none z-0" />
 
-      {/* Left side artwork: soft watercolor architectural illustration at the far left edge */}
-      <div className="absolute left-0 bottom-0 top-0 w-[240px] sm:w-[280px] md:w-[320px] pointer-events-none select-none z-0 overflow-visible flex items-end opacity-[0.85]">
-        <svg width="100%" height="90%" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="overflow-visible">
-          {/* Watercolor washes using radial gradients / blurred shapes */}
-          <circle cx="20" cy="240" r="90" fill="#FF2D3F" opacity="0.12" filter="blur(26px)" />
-          <circle cx="80" cy="260" r="60" fill="#FF2D3F" opacity="0.08" filter="blur(18px)" />
-          <circle cx="0" cy="180" r="100" fill="#FF2D3F" opacity="0.05" filter="blur(30px)" />
-          
-          {/* Hand-drawn organic house sketches */}
-          {/* Main house sketch (curvy, hand-drawn lines) */}
-          <path d="M-20 320 C-18 290 -22 250 -20 220 C-5 215 15 205 30 200 C45 205 60 215 65 220 L68 320" stroke="#FF2D3F" strokeWidth="1.2" strokeOpacity="0.25" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M-20 220 H68" stroke="#FF2D3F" strokeWidth="0.8" strokeOpacity="0.2" />
-          <path d="M15 320 V270 C15 268 25 268 25 270 V320" stroke="#FF2D3F" strokeWidth="1" strokeOpacity="0.25" />
-          {/* Windows */}
-          <rect x="5" y="235" width="14" height="18" rx="2" stroke="#FF2D3F" strokeWidth="1" strokeOpacity="0.2" />
-          <rect x="42" y="235" width="14" height="18" rx="2" stroke="#FF2D3F" strokeWidth="1" strokeOpacity="0.2" />
-          
-          {/* House 2 (Offset background) */}
-          <path d="M50 320 V230 C58 220 75 210 90 205 C105 210 120 225 125 230 L128 320" stroke="#FF2D3F" strokeWidth="1.2" strokeOpacity="0.22" strokeLinecap="round" strokeLinejoin="round" />
-          
-          {/* Tall faded background obelisk tower sketch on the far left */}
-          <path d="M-15 320 V90 C-10 80 -12 75 -5 70 C0 75 -5 80 -10 90 V320" stroke="#FF2D3F" strokeWidth="1.2" strokeOpacity="0.15" strokeLinecap="round" strokeLinejoin="round" />
-          
-          {/* Loose organic tree strokes and foliage */}
-          <path d="M110 320 C110 270 125 240 120 210 C115 190 100 180 98 160" stroke="#FF2D3F" strokeWidth="0.9" strokeOpacity="0.22" />
-          <circle cx="108" cy="180" r="28" fill="#FF2D3F" opacity="0.06" filter="blur(8px)" />
-          <circle cx="125" cy="205" r="22" fill="#FF2D3F" opacity="0.05" filter="blur(6px)" />
-        </svg>
-      </div>
-
-      {/* Right side artwork: soft watercolor architectural illustration at the far right edge */}
-      <div className="absolute right-0 bottom-0 top-0 w-[240px] sm:w-[280px] md:w-[320px] pointer-events-none select-none z-0 overflow-visible flex items-end justify-end opacity-[0.85]">
-        <svg width="100%" height="90%" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="overflow-visible">
-          {/* Watercolor washes */}
-          <circle cx="220" cy="220" r="95" fill="#FF2D3F" opacity="0.12" filter="blur(26px)" />
-          <circle cx="160" cy="260" r="70" fill="#FF2D3F" opacity="0.08" filter="blur(18px)" />
-          <circle cx="240" cy="150" r="100" fill="#FF2D3F" opacity="0.05" filter="blur(30px)" />
-          
-          {/* Right tall cupola tower outline */}
-          <path d="M160 320 V90 H210 V320" stroke="#FF2D3F" strokeWidth="1.3" strokeOpacity="0.25" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M160 110 H210 M160 135 H210" stroke="#FF2D3F" strokeWidth="0.8" strokeOpacity="0.2" />
-          {/* Peaked roof spire */}
-          <path d="M160 90 L185 50 L210 90" stroke="#FF2D3F" strokeWidth="1.3" strokeOpacity="0.25" strokeLinecap="round" strokeLinejoin="round" />
-          <line x1="185" y1="50" x2="185" y2="25" stroke="#FF2D3F" strokeWidth="1.3" strokeOpacity="0.2" />
-
-          {/* Building facade (sketch details) */}
-          <path d="M20 320 V180 H150 V320 Z" stroke="#FF2D3F" strokeWidth="1.5" strokeOpacity="0.25" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M20 180 L85 135 L150 180" stroke="#FF2D3F" strokeWidth="1.5" strokeOpacity="0.25" strokeLinecap="round" strokeLinejoin="round" />
-          
-          {/* Windows rows */}
-          <rect x="35" y="195" width="22" height="25" rx="1.5" stroke="#FF2D3F" strokeWidth="1" strokeOpacity="0.2" />
-          <rect x="100" y="195" width="22" height="25" rx="1.5" stroke="#FF2D3F" strokeWidth="1" strokeOpacity="0.2" />
-          <rect x="35" y="245" width="22" height="25" rx="1.5" stroke="#FF2D3F" strokeWidth="1" strokeOpacity="0.2" />
-          <rect x="100" y="245" width="22" height="25" rx="1.5" stroke="#FF2D3F" strokeWidth="1" strokeOpacity="0.2" />
-
-          {/* Street perspective loose lines */}
-          <line x1="0" y1="320" x2="240" y2="320" stroke="#FF2D3F" strokeWidth="1.6" strokeOpacity="0.25" />
-          <line x1="0" y1="328" x2="240" y2="330" stroke="#FF2D3F" strokeWidth="0.8" strokeOpacity="0.15" />
-
-          {/* Faint human silhouettes in loose sketches */}
-          <circle cx="55" cy="272" r="4.5" fill="#FF2D3F" fillOpacity="0.2" />
-          <path d="M55 276.5 L51 305 M55 276.5 L59 305 M55 276.5 C50 279 48 285 55 293" stroke="#FF2D3F" strokeWidth="1.8" strokeOpacity="0.22" strokeLinecap="round" />
-
-          <circle cx="75" cy="275" r="4.2" fill="#FF2D3F" fillOpacity="0.2" />
-          <path d="M75 279 L72 305 M75 279 L78 305 M75 279 C71 282 70 287 75 294" stroke="#FF2D3F" strokeWidth="1.5" strokeOpacity="0.22" strokeLinecap="round" />
-        </svg>
-      </div>
+      {/* here */}
+      {/* Right Background Artwork */}
+{/* Right Background Artwork */}
+<div className="absolute right-10 top-[20px] w-[800px] h-[700px] z-0">
+  <Image
+    src="/hero-left.png"
+    alt=""
+    fill
+    priority
+    className="object-contain"
+  />
+</div>
 
       <div className="max-w-[1240px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -206,62 +152,7 @@ export default function Hero() {
           </div>
 
           {/* RIGHT SIDE - Stats Card */}
-          <div className="relative flex items-center justify-center w-full">
-            <motion.div
-              className="bg-white border border-[#FFF1F3] rounded-[20px] premium-shadow p-12 relative w-full max-w-[540px] mx-auto z-10"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-
-              {/* 2x2 Grid of Metrics */}
-              <div className="grid grid-cols-2 gap-x-10 gap-y-12 relative z-10">
-                {/* Metric 1 */}
-                <div className="flex flex-col gap-4">
-                  <div className="w-[50px] h-[50px] rounded-2xl bg-[#FFF1F3] flex items-center justify-center">
-                    <DocumentIcon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <div className="text-[34px] font-extrabold text-[#111827] leading-none mb-1.5">1,500+</div>
-                    <div className="text-[14px] font-bold text-[#6B7280]">Plots Listed</div>
-                  </div>
-                </div>
-
-                {/* Metric 2 */}
-                <div className="flex flex-col gap-4">
-                  <div className="w-[50px] h-[50px] rounded-2xl bg-[#FFF1F3] flex items-center justify-center">
-                    <UsersIcon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <div className="text-[34px] font-extrabold text-[#111827] leading-none mb-1.5">3,000+</div>
-                    <div className="text-[14px] font-bold text-[#6B7280]">Active Buyers</div>
-                  </div>
-                </div>
-
-                {/* Metric 3 */}
-                <div className="flex flex-col gap-4">
-                  <div className="w-[50px] h-[50px] rounded-2xl bg-[#FFF1F3] flex items-center justify-center">
-                    <PinIcon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <div className="text-[34px] font-extrabold text-[#111827] leading-none mb-1.5">9</div>
-                    <div className="text-[14px] font-bold text-[#6B7280]">Focus Localities</div>
-                  </div>
-                </div>
-
-                {/* Metric 4 */}
-                <div className="flex flex-col gap-4">
-                  <div className="w-[50px] h-[50px] rounded-2xl bg-[#FFF1F3] flex items-center justify-center">
-                    <ChartIcon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <div className="text-[34px] font-extrabold text-[#111827] leading-none mb-1.5">Real-time</div>
-                    <div className="text-[14px] font-bold text-[#6B7280]">Market Intelligence</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          
         </div>
       </div>
     </section>
