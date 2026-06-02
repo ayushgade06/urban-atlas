@@ -134,17 +134,17 @@ export default function MediaSection() {
           </div>
 
           {/* CENTER COLUMN: Horizontal list of 5 icons (4 cols) */}
-          <div className="lg:col-span-4 flex flex-wrap lg:flex-nowrap justify-center gap-4">
-            <div className="flex flex-row flex-wrap lg:flex-col gap-4 w-full justify-center">
+          <div className="lg:col-span-5 flex justify-center items-center">
+            <div className="flex flex-row items-start justify-between w-full gap-2">
               {mediaItems.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-3.5 bg-white border border-[#F3F4F6] rounded-[20px] p-3.5 px-5 shadow-[0px_4px_20px_rgba(0,0,0,0.01)] flex-1 min-w-[180px]"
+                  className="flex flex-col items-center text-center gap-2 flex-1"
                 >
-                  <div className="w-[42px] h-[42px] rounded-xl bg-[#FFF1F3] flex items-center justify-center flex-shrink-0">
+                  <div className="flex-shrink-0 text-[#6B7280]">
                     <Icon />
                   </div>
-                  <span className="text-[12px] font-extrabold text-[#111827] leading-[1.3]">
+                  <span className="text-[11px] font-bold text-[#4B5563] leading-[1.3] max-w-[80px]">
                     {label}
                   </span>
                 </div>
@@ -152,8 +152,8 @@ export default function MediaSection() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: For Brokers card (4 cols) */}
-          <div className="lg:col-span-4">
+          {/* RIGHT COLUMN: For Brokers card (3 cols) */}
+          <div className="lg:col-span-3">
             <motion.div
               className="bg-white border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between items-start min-h-[330px]"
               whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}

@@ -152,7 +152,52 @@ export default function Hero() {
           </div>
 
           {/* RIGHT SIDE - Stats Card */}
-          
+          <div className="relative w-full flex justify-center lg:justify-end">
+            <div className="relative bg-white rounded-[32px] p-2 shadow-[0px_20px_60px_rgba(255,45,63,0.08)] border border-[#FFF1F3] w-full max-w-[480px]">
+              <div className="grid grid-cols-2 grid-rows-2 relative p-6">
+                {/* Horizontal Divider */}
+                <div className="absolute top-1/2 left-8 right-8 h-px bg-gray-100 -translate-y-1/2" />
+                {/* Vertical Divider */}
+                <div className="absolute left-1/2 top-8 bottom-8 w-px bg-gray-100 -translate-x-1/2" />
+
+                {/* Stat 1 */}
+                <div className="flex flex-col items-center justify-center text-center p-8">
+                  <div className="w-[52px] h-[52px] rounded-full bg-[#FFF1F3] flex items-center justify-center mb-5">
+                    <DocumentIcon className="w-6 h-6" />
+                  </div>
+                  <div className="text-[32px] font-extrabold text-[#111827] leading-none mb-1.5 tracking-tight">1,500+</div>
+                  <div className="text-[13px] font-bold text-[#6B7280]">Plots Listed</div>
+                </div>
+
+                {/* Stat 2 */}
+                <div className="flex flex-col items-center justify-center text-center p-8">
+                  <div className="w-[52px] h-[52px] rounded-full bg-[#FFF1F3] flex items-center justify-center mb-5">
+                    <UsersIcon className="w-6 h-6" />
+                  </div>
+                  <div className="text-[32px] font-extrabold text-[#111827] leading-none mb-1.5 tracking-tight">3,000+</div>
+                  <div className="text-[13px] font-bold text-[#6B7280]">Active Buyers</div>
+                </div>
+
+                {/* Stat 3 */}
+                <div className="flex flex-col items-center justify-center text-center p-8">
+                  <div className="w-[52px] h-[52px] rounded-full bg-[#FFF1F3] flex items-center justify-center mb-5">
+                    <PinIcon className="w-6 h-6" />
+                  </div>
+                  <div className="text-[32px] font-extrabold text-[#111827] leading-none mb-1.5 tracking-tight">9</div>
+                  <div className="text-[13px] font-bold text-[#6B7280]">Focus Localities</div>
+                </div>
+
+                {/* Stat 4 */}
+                <div className="flex flex-col items-center justify-center text-center p-8">
+                  <div className="w-[52px] h-[52px] rounded-full bg-[#FFF1F3] flex items-center justify-center mb-5">
+                    <ChartIcon className="w-6 h-6" />
+                  </div>
+                  <div className="text-[24px] font-extrabold text-[#111827] leading-none mb-1.5 tracking-tight mt-1">Real-time</div>
+                  <div className="text-[13px] font-bold text-[#6B7280]">Market Intelligence</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

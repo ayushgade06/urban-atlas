@@ -68,14 +68,23 @@ export default function DemandSection() {
           {demands.map(({ icon: Icon, label }) => (
             <motion.div
               key={label}
-              className="bg-[#FFF1F3] rounded-[20px] p-6 py-[28px] flex flex-col items-center justify-center text-center gap-4 cursor-default border border-[#FFF1F3] shadow-[0px_4px_20px_rgba(0,0,0,0.01)]"
+              className="bg-[#FFF1F3] rounded-[16px] px-5 py-4 flex items-center justify-start gap-4 cursor-default border border-[#FFE4E8] shadow-[0px_4px_20px_rgba(0,0,0,0.01)]"
               whileHover={{ y: -3, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}
               transition={{ duration: 0.2 }}
             >
-              <div className="w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center shadow-sm">
+              <div className="flex-shrink-0">
                 <Icon />
               </div>
-              <span className="text-[15px] font-extrabold text-[#111827]">{label}</span>
+              <span className="text-[13px] font-extrabold text-[#111827] text-left leading-tight">
+                {label.includes(' - ') ? (
+                  <>
+                    {label.split(' - ')[0]} - {label.split(' - ')[1].split(' ')[0]}<br />
+                    {label.split(' - ')[1].split(' ').slice(1).join(' ')}
+                  </>
+                ) : (
+                  label
+                )}
+              </span>
             </motion.div>
           ))}
         </div>

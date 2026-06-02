@@ -67,42 +67,40 @@ export default function HowItWorks() {
           How Urban Atlas <span className="text-[#FF2D3F]">Works</span>
         </h2>
 
-        {/* 3 cards with connectors */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[38px] relative max-w-[1100px] mx-auto">
+        {/* Single large card containing all steps */}
+        <div className="bg-white border border-[#F3F4F6] rounded-[24px] p-8 lg:p-12 shadow-[0px_4px_20px_rgba(0,0,0,0.02)] max-w-[1100px] mx-auto relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
           {steps.map(({ num, icon: Icon, title, desc }, i) => (
-            <div key={num} className="relative flex items-stretch">
-              <motion.div
-                className="relative bg-white border border-[#FFF1F3] rounded-[20px] p-9 pt-12 shadow-[0px_10px_40px_rgba(0,0,0,0.02)] flex flex-col items-start w-full z-10"
-                whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}
-                transition={{ duration: 0.22 }}
-              >
-                {/* Step badge in Red circle */}
-                <div className="absolute -top-[15px] left-9 w-[34px] h-[34px] bg-[#FF2D3F] text-white text-[12px] font-black rounded-full flex items-center justify-center shadow-md">
-                  {num}
-                </div>
-
+            <div key={num} className="flex items-center gap-4 lg:gap-8 flex-1 relative">
+              <div className="flex flex-row items-start gap-5">
                 {/* Styled Icon inside custom round circle background */}
-                <div className="w-[64px] h-[64px] rounded-full bg-[#FFF1F3] flex items-center justify-center mb-6">
+                <div className="w-[80px] h-[80px] rounded-full bg-[#FFF1F3] flex items-center justify-center flex-shrink-0">
                   <Icon />
                 </div>
 
-                {/* Step Header */}
-                <h3 className="text-[20px] font-extrabold text-[#111827] mb-2.5">{title}</h3>
-                {/* Step Description */}
-                <p className="text-[14px] font-medium text-[#6B7280] leading-[1.6]">{desc}</p>
-              </motion.div>
+                {/* Text Content */}
+                <div className="flex flex-col items-start pt-1">
+                  {/* Step badge in Red pill */}
+                  <div className="bg-[#FF2D3F] text-white text-[11px] font-black rounded-full px-2.5 py-0.5 mb-2 shadow-sm leading-tight tracking-wide">
+                    {num}
+                  </div>
+                  {/* Step Header */}
+                  <h3 className="text-[18px] font-extrabold text-[#111827] mb-1.5">{title}</h3>
+                  {/* Step Description */}
+                  <p className="text-[13px] font-medium text-[#6B7280] leading-[1.5] max-w-[160px]">{desc}</p>
+                </div>
+              </div>
 
               {/* Red dotted arrow connector (desktop only, between steps) */}
               {i < 2 && (
-                <div className="hidden lg:flex absolute -right-[26px] top-1/2 -translate-y-1/2 z-20 items-center justify-center">
+                <div className="hidden lg:flex flex-shrink-0 mx-2">
                   <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M1 6H20M20 6L15 1M20 6L15 11"
                       stroke="#FF2D3F"
-                      strokeWidth="2.5"
+                      strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeDasharray="4 4"
+                      strokeDasharray="3 3"
                     />
                   </svg>
                 </div>

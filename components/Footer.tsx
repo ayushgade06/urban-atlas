@@ -44,9 +44,6 @@ export default function Footer() {
           {/* LEFT COLUMN: Logo Stack */}
           <div className="flex flex-col items-start">
             <Logo className="mb-4" showTagline={true} />
-            <p className="text-[14px] font-bold text-[#6B7280] mt-1 select-none">
-              Lucknow Real Estate Intelligence
-            </p>
           </div>
 
           {/* CENTER COLUMN: Quick Links */}

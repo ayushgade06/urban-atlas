@@ -106,25 +106,50 @@ export default function Localities() {
         </h2>
 
         {/* Localities flex wrap, exactly centering elements */}
-        <div className="flex flex-wrap justify-center gap-3.5 max-w-5xl mx-auto">
-          {localities.map(({ icon: Icon, label }) => (
-            <motion.div
-              key={label}
-              className="border border-[#F3F4F6] rounded-[20px] px-6 py-4 flex items-center gap-3.5 text-[#4B5563] font-bold text-[14px] cursor-default bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.02)]"
-              whileHover={{
-                borderColor: '#FF2D3F',
-                color: '#FF2D3F',
-                y: -2,
-                boxShadow: '0px 10px 40px rgba(255,45,63,0.08)',
-              }}
-              transition={{ duration: 0.18 }}
-            >
-              <div className="flex-shrink-0">
-                <Icon />
-              </div>
-              <span>{label}</span>
-            </motion.div>
-          ))}
+        <div className="flex flex-col gap-3.5 max-w-5xl mx-auto">
+          {/* Top Row: 5 items */}
+          <div className="flex flex-wrap justify-center gap-3.5">
+            {localities.slice(0, 5).map(({ icon: Icon, label }) => (
+              <motion.div
+                key={label}
+                className="border border-[#F3F4F6] rounded-[20px] px-6 py-4 flex items-center gap-3.5 text-[#4B5563] font-bold text-[14px] cursor-default bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.02)]"
+                whileHover={{
+                  borderColor: '#FF2D3F',
+                  color: '#FF2D3F',
+                  y: -2,
+                  boxShadow: '0px 10px 40px rgba(255,45,63,0.08)',
+                }}
+                transition={{ duration: 0.18 }}
+              >
+                <div className="flex-shrink-0">
+                  <Icon />
+                </div>
+                <span>{label}</span>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Bottom Row: 4 items */}
+          <div className="flex flex-wrap justify-center gap-3.5">
+            {localities.slice(5).map(({ icon: Icon, label }) => (
+              <motion.div
+                key={label}
+                className="border border-[#F3F4F6] rounded-[20px] px-6 py-4 flex items-center gap-3.5 text-[#4B5563] font-bold text-[14px] cursor-default bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.02)]"
+                whileHover={{
+                  borderColor: '#FF2D3F',
+                  color: '#FF2D3F',
+                  y: -2,
+                  boxShadow: '0px 10px 40px rgba(255,45,63,0.08)',
+                }}
+                transition={{ duration: 0.18 }}
+              >
+                <div className="flex-shrink-0">
+                  <Icon />
+                </div>
+                <span>{label}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

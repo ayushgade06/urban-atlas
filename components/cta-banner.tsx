@@ -33,7 +33,7 @@ export default function CtaBanner() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
             <motion.a
               href="#submit-plot"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#FF2D3F] hover:bg-[#FFF1F3] rounded-[14px] px-8 py-4 font-black text-[15px] transition-all duration-200 premium-shadow"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white hover:bg-white/10 rounded-[14px] px-8 py-4 font-black text-[15px] transition-all duration-200"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
@@ -42,11 +42,11 @@ export default function CtaBanner() {
             </motion.a>
             <motion.a
               href="#buyer-circle"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white rounded-[14px] px-8 py-4 font-extrabold text-[15px] hover:bg-white/10 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#111827] rounded-[14px] px-8 py-4 font-extrabold text-[15px] hover:bg-[#F9FAFB] transition-all duration-200 premium-shadow"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
-              <WhatsAppIcon className="h-5 w-5 text-white mr-1" />
+              <WhatsAppIcon className="h-5 w-5 text-[#25D366] mr-1" />
               Join Buyer Circle
             </motion.a>
           </div>

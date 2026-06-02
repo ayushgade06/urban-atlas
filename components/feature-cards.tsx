@@ -66,7 +66,7 @@ export default function FeatureCards() {
   return (
     <section className="py-[74px] bg-[#FFFDFD] w-full" id="features">
       <div className="max-w-[1240px] mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] gap-6 items-stretch">
           {/* Card 1 — Sell Your Plot */}
           <motion.div
             className="relative bg-gradient-to-b from-[#FFFDFD] to-[#FFF5F6] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden min-h-[460px] h-full"

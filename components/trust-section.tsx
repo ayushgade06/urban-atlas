@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 // Custom SVG Icons for Why People Trust items
 function ActiveBuyerIcon() {
@@ -87,89 +88,70 @@ export default function TrustSection() {
           {/* LEFT — Market Report card */}
           <div className="lg:col-span-5">
             <motion.div
-              className="bg-white border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] h-full flex flex-col justify-between"
+              className="bg-white border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] h-full flex flex-col md:flex-row justify-between items-center md:items-stretch gap-6"
               whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}
               transition={{ duration: 0.22 }}
             >
-              <div className="flex flex-col items-start w-full">
-                <span className="text-[#FF2D3F] text-[12px] font-extrabold uppercase tracking-wider mb-2 bg-[#FFF1F3] px-3 py-1.5 rounded-full">
-                  Market Report
-                </span>
-                <h3 className="text-[28px] font-extrabold text-[#111827] mb-3 leading-tight">
-                  Lucknow Plot Market Report
-                </h3>
-                <p className="text-[14px] font-semibold text-[#4B5563] leading-[1.6] mb-6">
-                  Monthly insights on rates, demand, resale activity & authority developments.
-                </p>
-
-                {/* Brochure Mockup visual inside card */}
-                <div className="bg-gradient-to-br from-[#FFF5F6] to-white border border-[#FFF1F3] rounded-[14px] p-5 w-full flex items-center justify-between shadow-sm relative overflow-hidden mb-6">
-                  {/* Text details */}
-                  <div className="flex flex-col select-none relative z-10">
-                    <span className="text-[9px] font-bold text-[#FF2D3F] uppercase tracking-wider">
-                      Lucknow Plot
-                    </span>
-                    <span className="text-[14px] font-black text-[#111827] mt-0.5">
-                      Market Report
-                    </span>
-                    <span className="text-[10px] font-bold text-[#6B7280] mt-2">
-                      May 2025
-                    </span>
-                  </div>
-
-                  {/* Red Line Chart + Bars Illustration */}
-                  <div className="w-[120px] h-[70px] relative z-10 flex flex-col justify-end gap-1.5">
-                    {/* Line path */}
-                    <svg className="absolute inset-0 w-full h-[35px]" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 25C15 22 25 10 40 15C55 20 65 3 85 8C92 10 100 1 100 1" stroke="#FF2D3F" strokeWidth="2.5" strokeLinecap="round" />
-                    </svg>
-                    {/* Vertical bars */}
-                    <div className="flex items-end justify-between h-[30px] w-full px-1">
-                      {[30, 45, 38, 65, 85, 55, 90].map((h, i) => (
-                        <div
-                          key={i}
-                          className="w-1.5 bg-[#FF2D3F] rounded-t-[1px]"
-                          style={{ height: `${h}%` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
+              <div className="flex flex-col items-start w-full md:w-1/2 justify-between">
+                <div>
+                  <span className="text-[#FF2D3F] text-[12px] font-extrabold uppercase tracking-wider mb-2 bg-[#FFF1F3] px-3 py-1.5 rounded-full inline-block">
+                    Market Report
+                  </span>
+                  <h3 className="text-[28px] font-extrabold text-[#111827] mb-3 leading-tight mt-2">
+                    Lucknow Plot Market Report
+                  </h3>
+                  <p className="text-[14px] font-semibold text-[#4B5563] leading-[1.6] mb-6">
+                    Monthly insights on rates, demand, resale activity & authority developments.
+                  </p>
                 </div>
+                {/* Download outlined button */}
+                <motion.a
+                  href="#market-report-download"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-[#FF2D3F] text-[#FF2D3F] hover:bg-[#FF2D3F] hover:text-white rounded-[14px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 self-start whitespace-nowrap"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                >
+                  Download Latest Report
+                  <DownloadIcon />
+                </motion.a>
               </div>
 
-              {/* Download outlined button */}
-              <motion.a
-                href="#market-report-download"
-                className="inline-flex items-center justify-center gap-2 border-2 border-[#FF2D3F] text-[#FF2D3F] hover:bg-[#FF2D3F] hover:text-white rounded-[14px] px-6 py-3 text-[14px] font-extrabold transition-all duration-200 self-start"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-              >
-                Download Latest Report
-                <DownloadIcon />
-              </motion.a>
+              <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center relative min-h-[200px]">
+                <div className="relative w-full max-w-[180px] h-full min-h-[220px]">
+                  <Image
+                    src="/report_chart.png"
+                    alt="Lucknow Plot Market Report"
+                    fill
+                    priority
+                    className="object-contain"
+                  />
+                </div>
+              </div>
             </motion.div>
           </div>
 
           {/* RIGHT — Why People Trust Urban Atlas */}
           <div className="lg:col-span-7">
             <div className="bg-gradient-to-br from-white to-[#FFFDFD] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] h-full flex flex-col justify-between">
-              <div className="flex flex-col items-start mb-6">
+              <div className="flex flex-row items-start gap-5 mb-8">
                 {/* Shield Icon in Circle */}
-                <div className="w-[58px] h-[58px] rounded-full bg-[#FFF1F3] flex items-center justify-center mb-5 border-2 border-[#FF2D3F]">
+                <div className="w-[64px] h-[64px] rounded-full bg-[#FFF1F3] flex items-center justify-center flex-shrink-0 border-2 border-[#FF2D3F]">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF2D3F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     <polyline points="9 11 11 13 15 9" />
                   </svg>
                 </div>
-                <h3 className="text-[28px] font-extrabold text-[#111827] mb-2 leading-tight">
-                  Why People Trust Urban Atlas
-                </h3>
-                <p className="text-[14px] font-black text-[#FF2D3F] uppercase tracking-wider mb-2">
-                  Quality over quantity.
-                </p>
-                <p className="text-[14px] font-bold text-[#6B7280] leading-[1.6] max-w-2xl">
-                  We focus on real opportunities, local intelligence and meaningful connections that create value.
-                </p>
+                <div className="flex flex-col">
+                  <h3 className="text-[28px] font-extrabold text-[#111827] mb-1.5 leading-tight">
+                    Why People Trust Urban Atlas
+                  </h3>
+                  <p className="text-[13px] font-black text-[#FF2D3F] uppercase tracking-wider mb-2">
+                    Quality over quantity.
+                  </p>
+                  <p className="text-[14px] font-bold text-[#6B7280] leading-[1.6] max-w-xl">
+                    We focus on real opportunities, local intelligence and meaningful connections that create value.
+                  </p>
+                </div>
               </div>
 
               {/* Grid of features */}
