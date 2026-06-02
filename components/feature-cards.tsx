@@ -23,7 +23,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 // 1. Isometric Wireframe House SVG
 function IsometricHouseSVG() {
   return (
-    <svg width="130" height="130" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-2 right-2 opacity-80 pointer-events-none select-none z-0">
+    <svg width="104" height="104" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-4 right-4 opacity-80 pointer-events-none select-none z-0">
       {/* Front Face Wireframe */}
       <path d="M20 75L60 95V55L20 35V75Z" stroke="#FF2D3F" strokeWidth="1.5" strokeLinejoin="round" />
       {/* Right Side Wireframe */}
@@ -47,7 +47,7 @@ function IsometricHouseSVG() {
 // 2. Translucent Isometric Valuation Sheets
 function IsometricSheetsSVG() {
   return (
-    <svg width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-2 right-2 opacity-85 pointer-events-none select-none z-0">
+    <svg width="105" height="105" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-4 right-4 opacity-85 pointer-events-none select-none z-0">
       {/* Sheet 1 (Bottom Layer) */}
       <path d="M20 75 L60 95 L100 75 L60 55 Z" fill="rgba(124, 58, 237, 0.08)" stroke="rgba(124, 58, 237, 0.4)" strokeWidth="1.5" />
       {/* Sheet 2 (Middle Layer) */}
@@ -69,7 +69,7 @@ export default function FeatureCards() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] gap-6 items-stretch">
           {/* Card 1 — Sell Your Plot */}
           <motion.div
-            className="relative bg-gradient-to-b from-[#FFFDFD] to-[#FFF5F6] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden min-h-[460px] h-full"
+            className="relative bg-gradient-to-b from-[#FFFDFD] to-[#FFF5F6] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-start overflow-hidden min-h-[460px] h-full"
             whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}
             transition={{ duration: 0.22 }}
           >
@@ -95,10 +95,10 @@ export default function FeatureCards() {
               </ul>
             </div>
 
-            <div className="relative z-10 mt-8 flex flex-col items-start w-full">
+            <div className="relative z-10 mt-[115px] ml-[-20px] flex flex-col items-start w-full pr-[60px]">
               <motion.a
                 href="#submit-plot"
-                className="inline-flex items-center gap-2 bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] px-6 py-3.5 text-[14px] font-extrabold transition-all duration-200 premium-shadow"
+                className="inline-flex items-center gap-2 bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[12px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 premium-shadow whitespace-nowrap"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -113,7 +113,7 @@ export default function FeatureCards() {
 
           {/* Card 2 — Buyer Circle */}
           <motion.div
-            className="relative bg-gradient-to-b from-[#FDFFFD] to-[#F1FAF4] border border-[#E6F4EA] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden min-h-[460px] h-full"
+            className="relative bg-gradient-to-b from-[#FDFFFD] to-[#F1FAF4] border border-[#E6F4EA] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-start overflow-hidden min-h-[460px] h-full"
             whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(37,211,102,0.06)' }}
             transition={{ duration: 0.22 }}
           >
@@ -127,22 +127,36 @@ export default function FeatureCards() {
 
               {/* Side by side layout for text + checklist and phone mockup inside card */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-start">
-                <ul className="space-y-3.5">
-                  {[
-                    'Get early access to selected plots',
-                    'WhatsApp updates',
-                    'Focused & verified buyers',
-                    'No spam, only relevant opportunities',
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-[14px] font-bold text-[#4B5563]">
-                      <CheckmarkIcon color="#137333" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex flex-col items-start w-full">
+                  <ul className="space-y-3.5">
+                    {[
+                      'Get early access to selected plots',
+                      'WhatsApp updates',
+                      'Focused & verified buyers',
+                      'No spam, only relevant opportunities',
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-[14px] font-bold text-[#4B5563]">
+                        <CheckmarkIcon color="#137333" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="relative z-10 mt-[48px] flex flex-col items-start w-full">
+                    <motion.a
+                      href="#buyer-circle"
+                      className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-[12px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 premium-shadow"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <WhatsAppIcon className="h-4 w-4 text-white" />
+                      Join WhatsApp Group
+                    </motion.a>
+                  </div>
+                </div>
 
                 {/* WhatsApp Phone Mockup exactly matching screenshot message requirements */}
-                <div className="rounded-[18px] bg-white border border-[#E0E0E0] shadow-sm flex flex-col overflow-hidden max-w-[210px] w-full mx-auto md:ml-auto">
+                <div className="rounded-[18px] bg-white border border-[#E0E0E0] shadow-sm flex flex-col overflow-hidden max-w-[180px] w-full mx-auto md:ml-auto">
                   {/* Phone Header */}
                   <div className="bg-[#075E54] text-white p-2 flex items-center gap-1.5 leading-none">
                     <div className="w-5 h-5 rounded-full bg-[#128C7E] flex items-center justify-center flex-shrink-0">
@@ -181,23 +195,11 @@ export default function FeatureCards() {
                 </div>
               </div>
             </div>
-
-            <div className="relative z-10 mt-8 flex flex-col items-start w-full">
-              <motion.a
-                href="#buyer-circle"
-                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-[14px] px-6 py-3.5 text-[14px] font-extrabold transition-all duration-200 premium-shadow"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <WhatsAppIcon className="h-4 w-4 text-white" />
-                Join WhatsApp Group
-              </motion.a>
-            </div>
           </motion.div>
 
           {/* Card 3 — Free Valuation */}
           <motion.div
-            className="relative bg-gradient-to-b from-[#FCFDFD] to-[#F5F5FC] border border-[#ECECF9] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden min-h-[460px] h-full"
+            className="relative bg-gradient-to-b from-[#FCFDFD] to-[#F5F5FC] border border-[#ECECF9] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-start overflow-hidden min-h-[460px] h-full"
             whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(124,58,237,0.06)' }}
             transition={{ duration: 0.22 }}
           >
@@ -223,10 +225,10 @@ export default function FeatureCards() {
               </ul>
             </div>
 
-            <div className="relative z-10 mt-8 flex flex-col items-start w-full">
+            <div className="relative z-10 mt-[48px] ml-[-10px] flex flex-col items-start w-full pr-[80px]">
               <motion.a
                 href="#valuation"
-                className="inline-flex items-center gap-2 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-[14px] px-6 py-3.5 text-[14px] font-extrabold transition-all duration-200 premium-shadow"
+                className="inline-flex items-center gap-2 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-[12px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 premium-shadow whitespace-nowrap"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
