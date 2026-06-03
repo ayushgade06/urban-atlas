@@ -56,15 +56,15 @@ const demands = [
 
 export default function DemandSection() {
   return (
-    <section className="py-[64px] bg-white w-full" id="demand">
-      <div className="max-w-[1240px] mx-auto px-6">
+    <section className="py-12 bg-white w-full" id="demand">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         {/* Title */}
-        <h2 className="text-[32px] font-extrabold text-center text-[#111827] tracking-tight mb-[44px]">
+        <h2 className="text-[32px] font-extrabold text-center text-[#111827] tracking-tight mb-8">
           High <span className="text-[#FF2D3F]">Demand</span> For
         </h2>
 
         {/* 4 Pink rounded cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-[38px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-6">
           {demands.map(({ icon: Icon, label }) => (
             <motion.div
               key={label}

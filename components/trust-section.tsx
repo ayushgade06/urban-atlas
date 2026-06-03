@@ -82,8 +82,8 @@ const trustItems = [
 
 export default function TrustSection() {
   return (
-    <section className="py-[74px] bg-white w-full" id="market-report">
-      <div className="max-w-[1240px] mx-auto px-6">
+    <section className="py-14 bg-white w-full" id="market-report">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* LEFT — Market Report card */}
           <div className="lg:col-span-5">

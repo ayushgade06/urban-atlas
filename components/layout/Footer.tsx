@@ -5,8 +5,8 @@ import { MapPin, MessageSquare, Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F7F7F7] border-t border-[#EBEBEB] py-16 px-6 md:px-20 font-jakarta">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-[#F7F7F7] border-t border-[#EBEBEB] py-12 px-6 md:px-10 font-jakarta">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-2 group w-fit">
@@ -147,9 +147,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto h-px bg-[#EBEBEB] my-12" />
+      <div className="max-w-[1400px] mx-auto h-px bg-[#EBEBEB] my-8" />
 
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#9A9A9A]">
+      <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#9A9A9A]">
         <div>
           © {new Date().getFullYear()} Urban Atlas. All rights reserved.
         </div>

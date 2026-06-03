@@ -103,8 +103,8 @@ const mediaItems = [
 
 export default function MediaSection() {
   return (
-    <section className="py-[74px] bg-[#FFF8F8] w-full" id="media">
-      <div className="max-w-[1240px] mx-auto px-6">
+    <section className="py-14 bg-[#FFF8F8] w-full" id="media">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* LEFT COLUMN: Media description and Email bar (5 cols) */}
           <div className="lg:col-span-4 flex flex-col items-start">

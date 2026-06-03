@@ -94,7 +94,7 @@ export default function Navbar({ staticWhite = false }: NavbarProps) {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="bg-[#FF385C] text-white p-2 rounded-lg flex items-center justify-center">

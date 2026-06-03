@@ -13,8 +13,8 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function CtaBanner() {
   return (
-    <section className="px-6 py-12 bg-white w-full" id="cta-banner">
-      <div className="max-w-[1240px] mx-auto relative overflow-hidden rounded-[20px] bg-gradient-to-r from-[#FF2D3F] to-[#E81F34] shadow-[0px_10px_40px_rgba(255,45,63,0.15)]">
+    <section className="px-6 py-8 bg-white w-full" id="cta-banner">
+      <div className="max-w-[1400px] mx-auto relative overflow-hidden rounded-[20px] bg-gradient-to-r from-[#FF2D3F] to-[#E81F34] shadow-[0px_10px_40px_rgba(255,45,63,0.15)]">
         {/* Subtle cityscape outline silhouette in the background */}
         <div className="absolute bottom-0 left-0 right-0 h-[100px] opacity-[0.05] pointer-events-none select-none z-0">
           <svg width="100%" height="100%" viewBox="0 0 500 100" fill="white" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -22,11 +22,11 @@ export default function CtaBanner() {
           </svg>
         </div>
 
-        <div className="relative z-10 px-8 py-16 text-center max-w-3xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 px-8 py-11 text-center max-w-3xl mx-auto flex flex-col items-center">
           <h2 className="text-[34px] md:text-[40px] font-extrabold text-white mb-2 leading-tight tracking-tight">
             Ready to Sell Your Plot?
           </h2>
-          <p className="text-white/90 text-[15px] font-bold mb-10 max-w-lg leading-relaxed">
+          <p className="text-white/90 text-[15px] font-bold mb-7 max-w-lg leading-relaxed">
             Submit your property today and get connected with genuine buyers.
           </p>
 

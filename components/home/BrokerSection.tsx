@@ -68,9 +68,9 @@ export default function BrokerSection() {
     <section
       id="broker-network"
       ref={containerRef}
-      className="bg-white py-20 md:py-28 font-jakarta overflow-hidden"
+      className="bg-white py-14 md:py-20 font-jakarta overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left Column: Broker Protocol */}
         <div className="broker-left flex flex-col gap-6">
           <SectionLabel>Collaborative Moat</SectionLabel>

@@ -71,9 +71,9 @@ export default function ApproachSection() {
   return (
     <section
       ref={containerRef}
-      className="bg-[#F7F7F7] py-20 md:py-28 font-jakarta overflow-hidden"
+      className="bg-[#F7F7F7] py-14 md:py-20 font-jakarta overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         {/* Left Column (40%) */}
         <div className="approach-left lg:col-span-5 flex flex-col gap-5 sticky top-28">
           <SectionLabel>Our Approach</SectionLabel>

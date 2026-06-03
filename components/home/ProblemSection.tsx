@@ -62,11 +62,11 @@ export default function ProblemSection() {
   return (
     <section
       ref={containerRef}
-      className="bg-white py-20 md:py-28 font-jakarta"
+      className="bg-white py-14 md:py-20 font-jakarta"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         {/* Header */}
-        <div className="problem-title-reveal text-center max-w-3xl mx-auto mb-16">
+        <div className="problem-title-reveal text-center max-w-3xl mx-auto mb-10">
           <SectionLabel>The Problem</SectionLabel>
           <h2 className="heading-lg text-[#222222] mt-2 mb-4">
             Residential Plot Buying is Highly Fragmented

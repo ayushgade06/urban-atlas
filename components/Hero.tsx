@@ -75,47 +75,45 @@ function ChartIcon({ className }: { className?: string }) {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-[54px] pb-[70px]">
+    <section className="relative overflow-hidden bg-white pt-8 pb-10">
       {/* Visual backdrop gradient to replicate the exact layout proportions */}
-      <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-b from-[#FFFDFD] to-[#FFF8F8] opacity-60 pointer-events-none z-0" />
+      <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-b from-[#FFFDFD] to-[#FFF8F8] opacity-60 pointer-events-none z-0 hidden lg:block" />
 
-      {/* here */}
-      {/* Right Background Artwork */}
-{/* Right Background Artwork */}
-<div className="absolute right-10 top-[20px] w-[800px] h-[700px] z-0">
-  <Image
-    src="/hero-left.png"
-    alt=""
-    fill
-    priority
-    className="object-contain"
-  />
-</div>
+      {/* Right Background Artwork - Responsive */}
+      <div className="hidden md:block absolute right-0 top-[-10px] w-[500px] h-[400px] md:w-[550px] md:h-[450px] lg:w-[780px] lg:h-[660px] z-0">
+        <Image
+          src="/hero-left.png"
+          alt=""
+          fill
+          priority
+          className="object-contain"
+        />
+      </div>
 
-      <div className="max-w-[1240px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* LEFT SIDE CONTENT */}
           <div className="flex flex-col items-start">
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF1F3] text-[#FF2D3F] text-[13px] font-bold px-[15px] py-[7px] mb-7 select-none">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF1F3] text-[#FF2D3F] text-[13px] font-bold px-[15px] py-[7px] mb-4 select-none">
               <MapPinIcon className="h-4 w-4" />
               Lucknow Real Estate Intelligence
             </div>
 
             {/* Typography Matched Heading */}
-            <h1 className="text-[52px] md:text-[60px] font-extrabold leading-[1.08] text-[#111827] tracking-tight mb-5">
+            <h1 className="text-[48px] md:text-[56px] font-extrabold leading-[1.08] text-[#111827] tracking-tight mb-3">
               Connecting<br />
               Plot Owners<br />
               With <span className="text-[#FF2D3F]">Serious Buyers.</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-[17px] text-[#4B5563] leading-[1.5] max-w-lg mb-[38px] font-medium">
+            <p className="text-[16px] text-[#4B5563] leading-[1.5] max-w-lg mb-6 font-medium">
               We help you reach genuine buyers and sell your plot with confidence.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-[15px] w-full sm:w-auto mb-[32px]">
+            <div className="flex flex-col sm:flex-row gap-[14px] w-full sm:w-auto mb-5">
               <motion.a
                 href="#submit-plot"
                 className="inline-flex items-center justify-center gap-2.5 bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] px-8 py-4 font-extrabold text-[15px] transition-all duration-200 premium-shadow"
@@ -137,7 +135,7 @@ export default function Hero() {
             </div>
 
             {/* Trust points with Red Checks */}
-            <div className="flex flex-wrap items-center gap-[22px]">
+            <div className="flex flex-wrap items-center gap-5">
               {[
                 { text: 'Free Submission' },
                 { text: 'No Brokerage' },

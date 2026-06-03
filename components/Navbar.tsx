@@ -38,7 +38,7 @@ export default function Navbar() {
           : 'bg-white border-b border-[#F3F4F6]'
       }`}
     >
-      <div className="max-w-[1240px] mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
         {/* Left Side Brand Logo */}
         <Link href="/" className="hover:opacity-95 transition-opacity">
           <Logo showTagline={true} />

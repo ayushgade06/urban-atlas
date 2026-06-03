@@ -17,8 +17,8 @@ export default function LocalitiesPage() {
       {/* Navbar with always-white bg */}
       <Navbar staticWhite={true} />
 
-      <main className="flex-grow pt-28 pb-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <main className="flex-grow pt-20 pb-14">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           {/* Breadcrumb */}
           <nav className="text-xs font-semibold text-[#9A9A9A] uppercase tracking-wider mb-6">
             <Link href="/" className="hover:text-[#FF385C] transition-colors">
@@ -29,7 +29,7 @@ export default function LocalitiesPage() {
           </nav>
 
           {/* Page Header */}
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mb-10">
             <SectionLabel>Market Coverage</SectionLabel>
             <h1 className="heading-lg text-[#222222] mt-2 mb-4">
               Verified Lucknow Localities
@@ -40,7 +40,7 @@ export default function LocalitiesPage() {
           </div>
 
           {/* Grid of 6 Localities */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {LOCALITIES.map((loc) => (
               <LocalityCard
                 key={loc.slug}

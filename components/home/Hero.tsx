@@ -31,11 +31,11 @@ export default function Hero() {
     <section
       id="inventory"
       ref={containerRef}
-      className="min-h-screen bg-white pt-28 pb-16 flex items-center overflow-x-hidden font-jakarta"
+      className="bg-white pt-20 pb-12 flex items-center overflow-x-hidden font-jakarta"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Column: Text & CTAs */}
-        <div className="lg:col-span-7 flex flex-col gap-6">
+        <div className="lg:col-span-7 flex flex-col gap-4">
           {/* Label Chip */}
           <div className="hero-label inline-flex items-center gap-2 bg-[#FF385C]/10 text-[#FF385C] px-3.5 py-1.5 rounded-full text-xs font-bold w-fit">
             <span>🏙️</span> Lucknow&apos;s #1 Plot Intelligence Network
@@ -57,7 +57,7 @@ export default function Hero() {
           </h1>
 
           {/* Subtext */}
-          <div className="hero-sub flex flex-col gap-4 text-[#6A6A6A] text-base md:text-lg leading-relaxed max-w-2xl">
+          <div className="hero-sub flex flex-col gap-3 text-[#6A6A6A] text-base md:text-lg leading-relaxed max-w-2xl">
             <p>
               Navigate Lucknow&apos;s residential resale market with confidence. We track, clean, and verify plot data directly from Lucknow Development Authority (LDA) allotments and structured Awas Vikas colonies to ensure authentic listings.
             </p>
@@ -67,7 +67,7 @@ export default function Hero() {
           </div>
 
           {/* CTAs */}
-          <div className="hero-ctas flex flex-wrap items-center gap-4 mt-2">
+          <div className="hero-ctas flex flex-wrap items-center gap-4">
             <TallyModalTrigger className="bg-[#FF385C] hover:bg-[#E31C5F] text-white font-semibold text-[0.9375rem] px-6 py-3.5 rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-y-px flex items-center gap-2 cursor-pointer">
               Request Verified Inventory <span className="text-sm">→</span>
             </TallyModalTrigger>
@@ -82,7 +82,7 @@ export default function Hero() {
           </div>
 
           {/* Feature Badges */}
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="flex flex-wrap gap-2">
             {[
               "Verified Resale Inventory",
               "LDA & Awas Vikas Focused",
@@ -101,7 +101,7 @@ export default function Hero() {
           </div>
 
           {/* Stats Row */}
-          <div className="hero-stats grid grid-cols-3 gap-6 pt-6 border-t border-[#EBEBEB] mt-4">
+          <div className="hero-stats grid grid-cols-3 gap-5 pt-5 border-t border-[#EBEBEB]">
             <div>
               <div className="text-3xl md:text-4xl font-extrabold text-[#222222]">
                 <AnimatedCounter end={6} suffix="+" />

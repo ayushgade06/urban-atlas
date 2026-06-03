@@ -64,12 +64,12 @@ function IsometricSheetsSVG() {
 
 export default function FeatureCards() {
   return (
-    <section className="py-[74px] bg-[#FFFDFD] w-full" id="features">
-      <div className="max-w-[1240px] mx-auto px-6">
+    <section className="py-14 bg-[#FFFDFD] w-full" id="features">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] gap-6 items-stretch">
           {/* Card 1 — Sell Your Plot */}
           <motion.div
-            className="relative bg-gradient-to-b from-[#FFFDFD] to-[#FFF5F6] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-start overflow-hidden min-h-[460px] h-full"
+            className="relative bg-gradient-to-b from-[#FFFDFD] to-[#FFF5F6] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-start overflow-hidden min-h-[420px] h-full"
             whileHover={{ y: -4, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}
             transition={{ duration: 0.22 }}
           >
@@ -225,7 +225,7 @@ export default function FeatureCards() {
               </ul>
             </div>
 
-            <div className="relative z-10 mt-[48px] ml-[-10px] flex flex-col items-start w-full pr-[80px]">
+            <div className="relative z-10 mt-[70px] ml-[-10px] flex flex-col items-start w-full pr-[80px]">
               <motion.a
                 href="#valuation"
                 className="inline-flex items-center gap-2 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-[12px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 premium-shadow whitespace-nowrap"

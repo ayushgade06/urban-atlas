@@ -38,9 +38,9 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-[#F3F4F6] pt-16 pb-8 w-full" id="footer">
-      <div className="max-w-[1240px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer className="bg-white border-t border-[#F3F4F6] pt-12 pb-8 w-full" id="footer">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* LEFT COLUMN: Logo Stack */}
           <div className="flex flex-col items-start">
             <Logo className="mb-4" showTagline={true} />
