@@ -2,6 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { FadeUp } from '@/components/fade-up'
+import Link from 'next/link'
+
+const MotionLink = motion(Link)
 
 // Handshake illustration using lucide-style SVG
 function HandshakeIllustration() {
@@ -55,15 +58,15 @@ export default function BrokerSection() {
               <p className="text-base text-ink-soft leading-relaxed mb-7">
                 Partner with us and get quality buyer leads via WhatsApp &amp; other channels.
               </p>
-              <motion.a
-                href="#broker-submit"
+              <MotionLink
+                href="/channel-partners"
                 id="broker-submit-cta"
                 className="inline-flex items-center gap-2 border border-ink text-ink rounded-full px-5 py-2 text-sm font-medium hover:bg-gray-50 transition-colors"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
                 Submit Details →
-              </motion.a>
+              </MotionLink>
             </div>
           </FadeUp>
 

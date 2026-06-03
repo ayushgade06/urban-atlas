@@ -2,6 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
+
+const MotionLink = motion(Link)
 
 // Custom matching red SVG Icons for the 5 research trends
 function TrendIcon1() {
@@ -181,8 +184,8 @@ export default function MediaSection() {
                 </div>
               </div>
 
-              <motion.a
-                href="#broker-submit"
+              <MotionLink
+                href="/channel-partners"
                 className="mt-4 inline-flex items-center justify-center gap-2 border-2 border-[#FF2D3F] text-[#FF2D3F] hover:bg-[#FF2D3F] hover:text-white rounded-[14px] px-[22px] py-[11px] text-[13px] font-extrabold transition-all duration-200"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -192,7 +195,7 @@ export default function MediaSection() {
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </motion.a>
+              </MotionLink>
             </motion.div>
           </div>
         </div>

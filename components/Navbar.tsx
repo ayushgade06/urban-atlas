@@ -24,10 +24,10 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { label: 'Submit Plot', href: '#submit-plot' },
-    { label: 'Buyer Circle', href: '#buyer-circle', whatsapp: true },
-    { label: 'Valuation', href: '#valuation' },
-    { label: 'Market Report', href: '#market-report' },
+    { label: 'Submit Plot', href: '/submit-plot' },
+    { label: 'Buyer Circle', href: '/buyer-circle', whatsapp: true },
+    { label: 'Valuation', href: '/valuation' },
+    { label: 'Market Report', href: '/#market-report' },
   ]
 
   return (
@@ -63,7 +63,7 @@ export default function Navbar() {
 
           {/* Red CTA Button - Submit Plot */}
           <Link
-            href="#submit-plot"
+            href="/submit-plot"
             className="bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] px-[22px] py-[11px] text-[14px] font-bold transition-all duration-200 premium-shadow"
           >
             Submit Plot
@@ -99,7 +99,7 @@ export default function Navbar() {
             ))}
           </nav>
           <Link
-            href="#submit-plot"
+            href="/submit-plot"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] py-3.5 text-base font-bold transition-all"
           >

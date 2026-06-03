@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'react'
+import Link from 'next/link'
 import { Logo } from '@/components/logo'
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -30,10 +30,10 @@ function ClockIcon({ className }: { className?: string }) {
 }
 
 const quickLinks = [
-  { label: 'Submit Plot', href: '#submit-plot' },
-  { label: 'Buyer Circle', href: '#buyer-circle' },
-  { label: 'Valuation', href: '#valuation' },
-  { label: 'Market Report', href: '#market-report' },
+  { label: 'Submit Plot', href: '/submit-plot' },
+  { label: 'Buyer Circle', href: '/buyer-circle' },
+  { label: 'Valuation', href: '/valuation' },
+  { label: 'Market Report', href: '/#market-report' },
 ]
 
 export default function Footer() {
@@ -54,12 +54,12 @@ export default function Footer() {
             <ul className="space-y-3.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-[14px] font-bold text-[#4B5563] hover:text-[#FF2D3F] transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

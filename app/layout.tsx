@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import CallBackWidget from '@/components/CallBackWidget'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full bg-white text-[#222222] antialiased flex flex-col selection:bg-[#FF385C]/10 selection:text-[#FF385C]">
         {children}
+        <CallBackWidget />
       </body>
     </html>
   )

@@ -2,6 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+
+const MotionLink = motion(Link)
 
 // Custom SVGs for checklist indicators
 function CheckmarkIcon({ color }: { color: string }) {
@@ -96,15 +99,15 @@ export default function FeatureCards() {
             </div>
 
             <div className="relative z-10 mt-[115px] ml-[-20px] flex flex-col items-start w-full pr-[60px]">
-              <motion.a
-                href="#submit-plot"
+              <MotionLink
+                href="/submit-plot"
                 className="inline-flex items-center gap-2 bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[12px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 premium-shadow whitespace-nowrap"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Submit Plot Details
                 <ArrowRight className="h-4 w-4 stroke-[3]" />
-              </motion.a>
+              </MotionLink>
             </div>
 
             {/* Decorative isometric wireframe house */}
@@ -143,15 +146,15 @@ export default function FeatureCards() {
                   </ul>
 
                   <div className="relative z-10 mt-[48px] flex flex-col items-start w-full">
-                    <motion.a
-                      href="#buyer-circle"
+                    <MotionLink
+                      href="/buyer-circle"
                       className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-[12px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 premium-shadow"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       <WhatsAppIcon className="h-4 w-4 text-white" />
                       Join WhatsApp Group
-                    </motion.a>
+                    </MotionLink>
                   </div>
                 </div>
 
@@ -226,15 +229,15 @@ export default function FeatureCards() {
             </div>
 
             <div className="relative z-10 mt-[70px] ml-[-10px] flex flex-col items-start w-full pr-[80px]">
-              <motion.a
-                href="#valuation"
+              <MotionLink
+                href="/valuation"
                 className="inline-flex items-center gap-2 bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-[12px] px-5 py-2.5 text-[13px] font-extrabold transition-all duration-200 premium-shadow whitespace-nowrap"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Get Free Valuation
                 <ArrowRight className="h-4 w-4 stroke-[3]" />
-              </motion.a>
+              </MotionLink>
             </div>
 
             {/* Decorative Translucent Isometric purple layers */}

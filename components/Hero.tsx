@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
+
+const MotionLink = motion(Link)
 
 // Custom SVG Icons matching screenshot precisely
 function MapPinIcon({ className }: { className?: string }) {
@@ -114,24 +117,24 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-[14px] w-full sm:w-auto mb-5">
-              <motion.a
-                href="#submit-plot"
+              <MotionLink
+                href="/submit-plot"
                 className="inline-flex items-center justify-center gap-2.5 bg-[#FF2D3F] hover:bg-[#E81F34] text-white rounded-[14px] px-8 py-4 font-extrabold text-[15px] transition-all duration-200 premium-shadow"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
                 Submit Your Plot
                 <ArrowRight className="h-4 w-4 stroke-[3]" />
-              </motion.a>
-              <motion.a
-                href="#buyer-circle"
+              </MotionLink>
+              <MotionLink
+                href="/buyer-circle"
                 className="inline-flex items-center justify-center gap-2 border-2 border-gray-200 text-[#111827] bg-white rounded-[14px] px-8 py-4 font-bold text-[15px] hover:border-gray-300 transition-all duration-200"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
                 <WhatsAppIcon className="h-5 w-5 text-[#25D366] mr-1" />
                 Join Buyer Circle
-              </motion.a>
+              </MotionLink>
             </div>
 
             {/* Trust points with Red Checks */}

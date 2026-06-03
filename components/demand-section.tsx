@@ -1,6 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+
+const MotionLink = motion(Link)
 
 // Custom high-fidelity SVG Icons matching screenshot
 function CornerIcon() {
@@ -91,14 +94,14 @@ export default function DemandSection() {
 
         {/* Center Outlined Submit button */}
         <div className="flex justify-center">
-          <motion.a
-            href="#submit-plot"
+          <MotionLink
+            href="/submit-plot"
             className="inline-flex items-center justify-center border-2 border-[#FF2D3F] text-[#FF2D3F] hover:bg-[#FF2D3F] hover:text-white rounded-[14px] px-[32px] py-[12px] font-extrabold text-[14px] transition-all duration-200"
             whileHover={{ y: -2 }}
             whileTap={{ y: 0 }}
           >
             Submit Your Plot
-          </motion.a>
+          </MotionLink>
         </div>
       </div>
     </section>
