@@ -3,45 +3,112 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { ownerName, whatsapp, locality, sectorBlock, plotArea, plotFeatures, askingPrice } = body
 
-    // Server-side validation
-    if (!ownerName || !whatsapp || !locality || !sectorBlock || !plotArea) {
-      return NextResponse.json({ error: 'All required fields must be provided' }, { status: 400 })
+    const {
+      ownerName,
+      whatsapp,
+      locality,
+      sectorBlock,
+      plotArea,
+      plotFeatures,
+      askingPrice,
+    } = body
+
+    // Validation
+    if (
+      !ownerName ||
+      !whatsapp ||
+      !locality ||
+      !sectorBlock ||
+      !plotArea
+    ) {
+      return NextResponse.json(
+        { error: 'All required fields must be provided' },
+        { status: 400 }
+      )
     }
 
     const cleanPhone = whatsapp.replace(/\D/g, '')
+
     if (cleanPhone.length !== 10) {
-      return NextResponse.json({ error: 'WhatsApp number must be exactly 10 digits' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'WhatsApp number must be exactly 10 digits' },
+        { status: 400 }
+      )
     }
 
-    const formId = process.env.TALLY_VALUATION_ID || '68MPZA'
+    const formBody = new URLSearchParams()
 
-    const tallyBody = new URLSearchParams()
-    tallyBody.append('Owner Name', ownerName)
-    tallyBody.append('WhatsApp', `+91${cleanPhone}`)
-    tallyBody.append('Locality', locality)
-    tallyBody.append('Sector / Block', sectorBlock)
-    tallyBody.append('Plot Area', `${plotArea} sq ft`)
-    if (plotFeatures && Array.isArray(plotFeatures)) {
-      tallyBody.append('Plot Features', plotFeatures.join(', '))
-    }
+    // Owner Name
+    formBody.append('entry.2040453638', ownerName)
+
+    // WhatsApp
+    formBody.append('entry.1272368716', cleanPhone)
+
+    // Sector / Block
+    formBody.append('entry.2022994557', sectorBlock)
+
+    // Plot Area
+    formBody.append('entry.1299513441', String(plotArea))
+
+    // Asking Price
     if (askingPrice) {
-      tallyBody.append('What price are you expecting?', `Rs. ${askingPrice}`)
+      formBody.append('entry.515855747', String(askingPrice))
     }
 
-    const tallyRes = await fetch(`https://tally.so/r/${formId}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: tallyBody.toString(),
+    // Locality
+    formBody.append('entry.1381981154', locality)
+
+    // Plot Features (Checkboxes)
+    if (Array.isArray(plotFeatures)) {
+      plotFeatures.forEach((feature: string) => {
+        formBody.append('entry.329113743', feature)
+      })
+    }
+
+    // Sentinel fields
+    formBody.append('entry.1381981154_sentinel', '')
+    formBody.append('entry.329113743_sentinel', '')
+
+    // Hidden Google fields
+    formBody.append('fvv', '1')
+    formBody.append('pageHistory', '0')
+    formBody.append('fbzx', '-8036467680122660405')
+
+    console.log('Submitting to Google Form:')
+    console.log(formBody.toString())
+
+    const response = await fetch(
+      'https://docs.google.com/forms/u/0/d/e/1FAIpQLScDPoPbcIhsVQh9wymn9NPE7DLYW_R-as5YvKwUTgSyxjuRPA/formResponse',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      }
+    )
+
+    const responseText = await response.text()
+
+    console.log('Google Form Status:', response.status)
+    console.log(
+      'Google Form Response:',
+      responseText.substring(0, 1000)
+    )
+
+    return NextResponse.json({
+      success: response.status === 200,
+      googleStatus: response.status,
     })
-
-    if (!tallyRes.ok) {
-      return NextResponse.json({ error: 'Failed to submit details to backend' }, { status: 500 })
-    }
-
-    return NextResponse.json({ success: true })
   } catch (error: any) {
-    return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 })
+    console.error('Valuation Submission Error:', error)
+
+    return NextResponse.json(
+      {
+        error: error.message || 'Internal server error',
+      },
+      { status: 500 }
+    )
   }
 }

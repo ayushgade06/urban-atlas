@@ -3,50 +3,97 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { fullName, mobileNumber, areasCovered, experience, activeIn, additionalInformation } = body
 
-    // Server-side validation
-    if (!fullName || !mobileNumber || !areasCovered) {
-      return NextResponse.json({ error: 'All required fields must be provided' }, { status: 400 })
+    const {
+      fullName,
+      mobileNumber,
+      areasCovered,
+      experience,
+      activeIn,
+      additionalInformation,
+    } = body
+
+    if (!fullName || !mobileNumber || !areasCovered?.length) {
+      return NextResponse.json(
+        { error: 'Required fields are missing' },
+        { status: 400 }
+      )
     }
 
     const cleanPhone = mobileNumber.replace(/\D/g, '')
+
     if (cleanPhone.length !== 10) {
-      return NextResponse.json({ error: 'Mobile number must be exactly 10 digits' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'Mobile number must be exactly 10 digits' },
+        { status: 400 }
+      )
     }
 
-    const formId = process.env.TALLY_CHANNEL_PARTNER_ID || '68MPZA'
+    const formBody = new URLSearchParams()
 
-    const tallyBody = new URLSearchParams()
-    tallyBody.append('Full Name', fullName)
-    tallyBody.append('Mobile Number / WhatsApp', `+91${cleanPhone}`)
+    // Full Name
+    formBody.append('entry.1971134255', fullName)
+
+    // Mobile Number
+    formBody.append('entry.238409359', cleanPhone)
+
+    // Areas Covered (multi-select)
     if (Array.isArray(areasCovered)) {
-      tallyBody.append('Areas You Cover', areasCovered.join(', '))
-    } else {
-      tallyBody.append('Areas You Cover', areasCovered)
+      areasCovered.forEach((area: string) => {
+        formBody.append('entry.1766495771', area)
+      })
     }
+
+    // Experience
     if (experience) {
-      tallyBody.append('Experience', experience)
-    }
-    if (activeIn && Array.isArray(activeIn)) {
-      tallyBody.append('Active In', activeIn.join(', '))
-    }
-    if (additionalInformation) {
-      tallyBody.append('Additional Information', additionalInformation)
+      formBody.append('entry.1332153238', experience)
     }
 
-    const tallyRes = await fetch(`https://tally.so/r/${formId}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: tallyBody.toString(),
+    // Active In (multi-select)
+    if (Array.isArray(activeIn)) {
+      activeIn.forEach((item: string) => {
+        formBody.append('entry.1434047445', item)
+      })
+    }
+
+    // Hidden Google fields from captured payload
+    formBody.append('hud', 'true')
+    formBody.append('entry.1766495771_sentinel', '')
+    formBody.append('entry.1332153238_sentinel', '')
+    formBody.append('entry.1434047445_sentinel', '')
+    formBody.append('fvv', '1')
+    formBody.append('pageHistory', '0')
+    formBody.append('fbzx', '3572440355709641413')
+
+    console.log('Submitting to Google Form:')
+    console.log(formBody.toString())
+
+    const response = await fetch(
+      'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfH7O-er5wGc4WNo1A8OuwlUbYrw9MnOi4U-FE_uWN2HLO_iA/formResponse',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      }
+    )
+
+    const responseText = await response.text()
+
+    console.log('Google Form Status:', response.status)
+    console.log('Google Form Response:', responseText.substring(0, 1000))
+
+    return NextResponse.json({
+      success: response.status === 200,
+      googleStatus: response.status,
     })
-
-    if (!tallyRes.ok) {
-      return NextResponse.json({ error: 'Failed to submit details to backend' }, { status: 500 })
-    }
-
-    return NextResponse.json({ success: true })
   } catch (error: any) {
-    return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 })
+    console.error('Channel Partner Submission Error:', error)
+
+    return NextResponse.json(
+      { error: error.message || 'Internal server error' },
+      { status: 500 }
+    )
   }
 }

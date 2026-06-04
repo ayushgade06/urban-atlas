@@ -3,49 +3,125 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { fullName, whatsapp, preferredLocality, budgetRange, plotSizeRequirement, purchasePurpose, expectedPurchaseTimeline } = body
 
-    // Server-side validation
-    if (!fullName || !whatsapp || !preferredLocality || !budgetRange || !purchasePurpose) {
-      return NextResponse.json({ error: 'All required fields must be provided' }, { status: 400 })
+    const {
+      fullName,
+      whatsapp,
+      preferredLocality,
+      budgetRange,
+      plotSizeRequirement,
+      purchasePurpose,
+      expectedPurchaseTimeline,
+    } = body
+
+    // Validation
+    if (
+      !fullName ||
+      !whatsapp ||
+      !preferredLocality ||
+      !budgetRange ||
+      !purchasePurpose
+    ) {
+      return NextResponse.json(
+        { error: 'All required fields must be provided' },
+        { status: 400 }
+      )
     }
 
     const cleanPhone = whatsapp.replace(/\D/g, '')
+
     if (cleanPhone.length !== 10) {
-      return NextResponse.json({ error: 'WhatsApp number must be exactly 10 digits' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'WhatsApp number must be exactly 10 digits' },
+        { status: 400 }
+      )
     }
 
-    const formId = process.env.TALLY_BUYER_CIRCLE_ID || '68MPZA'
+    const formBody = new URLSearchParams()
 
-    const tallyBody = new URLSearchParams()
-    tallyBody.append('Full Name', fullName)
-    tallyBody.append('WhatsApp', `+91${cleanPhone}`)
+    // Full Name
+    formBody.append('entry.1120852240', fullName)
+
+    // WhatsApp
+    formBody.append('entry.1462031601', cleanPhone)
+
+    // Preferred Locality (Checkboxes)
     if (Array.isArray(preferredLocality)) {
-      tallyBody.append('Preferred Locality', preferredLocality.join(', '))
+      preferredLocality.forEach((locality: string) => {
+        formBody.append('entry.1725023768', locality)
+      })
     } else {
-      tallyBody.append('Preferred Locality', preferredLocality)
+      formBody.append('entry.1725023768', preferredLocality)
     }
-    tallyBody.append('Budget Range', budgetRange)
+
+    // Budget Range
+    formBody.append('entry.1876984395', budgetRange)
+
+    // Plot Size Requirement
     if (plotSizeRequirement) {
-      tallyBody.append('Plot Size Requirement', plotSizeRequirement)
+      formBody.append(
+        'entry.1751685105',
+        plotSizeRequirement
+      )
     }
-    tallyBody.append('Purchase Purpose', purchasePurpose)
+
+    // Purchase Purpose
+    formBody.append('entry.449646021', purchasePurpose)
+
+    // Expected Purchase Timeline
     if (expectedPurchaseTimeline) {
-      tallyBody.append('Expected Purchase Timeline', expectedPurchaseTimeline)
+      formBody.append(
+        'entry.633181953',
+        expectedPurchaseTimeline
+      )
     }
 
-    const tallyRes = await fetch(`https://tally.so/r/${formId}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: tallyBody.toString(),
+    // Sentinel fields
+    formBody.append('entry.1725023768_sentinel', '')
+    formBody.append('entry.1876984395_sentinel', '')
+    formBody.append('entry.1751685105_sentinel', '')
+    formBody.append('entry.449646021_sentinel', '')
+    formBody.append('entry.633181953_sentinel', '')
+
+    // Google hidden fields
+    formBody.append('fvv', '1')
+    formBody.append('pageHistory', '0')
+    formBody.append('fbzx', '4659208607888357832')
+
+    console.log('Submitting to Google Form:')
+    console.log(formBody.toString())
+
+    const response = await fetch(
+      'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdkSE-qXJoFBA4VKPWzfKncgEul7WcIZRaO8dvzKTB3E070Vg/formResponse',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      }
+    )
+
+    const responseText = await response.text()
+
+    console.log('Google Form Status:', response.status)
+    console.log(
+      'Google Form Response:',
+      responseText.substring(0, 1000)
+    )
+
+    return NextResponse.json({
+      success: response.ok,
+      googleStatus: response.status,
     })
-
-    if (!tallyRes.ok) {
-      return NextResponse.json({ error: 'Failed to submit details to backend' }, { status: 500 })
-    }
-
-    return NextResponse.json({ success: true })
   } catch (error: any) {
-    return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 })
+    console.error('Buyer Circle Submission Error:', error)
+
+    return NextResponse.json(
+      {
+        error: error.message || 'Internal server error',
+      },
+      { status: 500 }
+    )
   }
 }

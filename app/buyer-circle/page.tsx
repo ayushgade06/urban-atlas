@@ -189,7 +189,7 @@ export default function BuyerCirclePage() {
           name="whatsapp"
           value={form.whatsapp}
           onChange={handleInputChange}
-          placeholder="e.g. +91 99999 99999"
+          placeholder="e.g. 99999 99999"
           required
           error={errors.whatsapp}
           disabled={isSubmitting}

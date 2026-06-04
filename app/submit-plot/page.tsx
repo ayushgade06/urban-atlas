@@ -171,7 +171,7 @@ export default function SubmitPlotPage() {
           name="whatsappNumber"
           value={form.whatsappNumber}
           onChange={handleInputChange}
-          placeholder="e.g. +91 99999 99999"
+          placeholder="e.g. 99999 99999"
           required
           error={errors.whatsappNumber}
           disabled={isSubmitting}
