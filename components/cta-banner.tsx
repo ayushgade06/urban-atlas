@@ -16,7 +16,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function CtaBanner() {
   return (
-    <section className="px-6 py-8 bg-white w-full" id="cta-banner">
+    <section className="px-4 sm:px-6 py-8 bg-white w-full" id="cta-banner">
       <div className="max-w-[1400px] mx-auto relative overflow-hidden rounded-[20px] bg-gradient-to-r from-[#FF2D3F] to-[#E81F34] shadow-[0px_10px_40px_rgba(255,45,63,0.15)]">
         {/* Subtle cityscape outline silhouette in the background */}
         <div className="absolute bottom-0 left-0 right-0 h-[100px] opacity-[0.05] pointer-events-none select-none z-0">
@@ -33,10 +33,10 @@ export default function CtaBanner() {
             Submit your property today and get connected with genuine buyers.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+          <div className="flex flex-col md:flex-row gap-4 justify-center w-full md:w-auto">
             <MotionLink
               href="/submit-plot"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white hover:bg-white/10 rounded-[14px] px-8 py-4 font-black text-[15px] transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white hover:bg-white/10 rounded-[14px] px-8 py-4 font-black text-[15px] transition-all duration-200 w-full md:w-auto"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
@@ -45,7 +45,7 @@ export default function CtaBanner() {
             </MotionLink>
             <MotionLink
               href="/buyer-circle"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#111827] rounded-[14px] px-8 py-4 font-extrabold text-[15px] hover:bg-[#F9FAFB] transition-all duration-200 premium-shadow"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#111827] rounded-[14px] px-8 py-4 font-extrabold text-[15px] hover:bg-[#F9FAFB] transition-all duration-200 premium-shadow w-full md:w-auto"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >

@@ -239,7 +239,7 @@ export default function ValuationPage() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#FF2D3F] hover:bg-[#E81F34] disabled:bg-[#FF2D3F]/60 text-white rounded-[14px] py-4 text-[15px] font-extrabold transition-all duration-200 premium-shadow select-none cursor-pointer flex items-center justify-center gap-2"
+            className="w-full sm:w-auto sm:min-w-[200px] sm:self-center bg-[#FF2D3F] hover:bg-[#E81F34] disabled:bg-[#FF2D3F]/60 text-white rounded-[14px] py-4 text-[15px] font-extrabold transition-all duration-200 premium-shadow select-none cursor-pointer flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>

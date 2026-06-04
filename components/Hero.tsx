@@ -82,8 +82,8 @@ export default function Hero() {
       {/* Visual backdrop gradient to replicate the exact layout proportions */}
       <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-b from-[#FFFDFD] to-[#FFF8F8] opacity-60 pointer-events-none z-0 hidden lg:block" />
 
-      {/* Right Background Artwork - Responsive */}
-      <div className="hidden md:block absolute right-0 top-[-10px] w-[500px] h-[400px] md:w-[550px] md:h-[450px] lg:w-[780px] lg:h-[660px] z-0">
+      {/* Right Background Artwork - Desktop Only */}
+      <div className="hidden lg:block absolute right-0 top-[-10px] lg:w-[780px] lg:h-[660px] z-0">
         <Image
           src="/hero-left.png"
           alt=""
@@ -93,10 +93,10 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 relative z-10">
+        <div className="flex flex-col md:flex-row lg:grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* LEFT SIDE CONTENT */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start w-full md:w-[55%] lg:w-full">
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF1F3] text-[#FF2D3F] text-[13px] font-bold px-[15px] py-[7px] mb-4 select-none">
               <MapPinIcon className="h-4 w-4" />
@@ -149,6 +149,19 @@ export default function Hero() {
                   {item.text}
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Mobile/Tablet Image - Inline */}
+          <div className="w-full md:w-[40%] lg:hidden mt-8 md:mt-0 flex-shrink-0">
+            <div className="relative w-full h-[250px] sm:h-[350px] md:h-[300px] max-w-sm md:max-w-md mx-auto">
+              <Image
+                src="/hero-left.png"
+                alt="Lucknow Real Estate"
+                fill
+                priority
+                className="object-contain"
+              />
             </div>
           </div>
         </div>

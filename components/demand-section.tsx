@@ -60,18 +60,18 @@ const demands = [
 export default function DemandSection() {
   return (
     <section className="py-12 bg-white w-full" id="demand">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Title */}
         <h2 className="text-[32px] font-extrabold text-center text-[#111827] tracking-tight mb-8">
           High <span className="text-[#FF2D3F]">Demand</span> For
         </h2>
 
         {/* 4 Pink rounded cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-6">
+        <div className="flex flex-wrap lg:grid lg:grid-cols-4 justify-center gap-2 lg:gap-6 max-w-5xl mx-auto mb-6">
           {demands.map(({ icon: Icon, label }) => (
             <motion.div
               key={label}
-              className="bg-[#FFF1F3] rounded-[16px] px-5 py-4 flex items-center justify-start gap-4 cursor-default border border-[#FFE4E8] shadow-[0px_4px_20px_rgba(0,0,0,0.01)]"
+              className="bg-[#FFF1F3] rounded-[16px] px-5 py-4 flex items-center justify-start gap-4 cursor-default border border-[#FFE4E8] shadow-[0px_4px_20px_rgba(0,0,0,0.01)] w-full sm:w-auto lg:w-full"
               whileHover={{ y: -3, boxShadow: '0px 10px 40px rgba(255,45,63,0.06)' }}
               transition={{ duration: 0.2 }}
             >

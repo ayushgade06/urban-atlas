@@ -68,8 +68,8 @@ function IsometricSheetsSVG() {
 export default function FeatureCards() {
   return (
     <section className="py-14 bg-[#FFFDFD] w-full" id="features">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_1fr] gap-6 items-stretch">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1.6fr_1fr] gap-6 items-stretch">
           {/* Card 1 — Sell Your Plot */}
           <motion.div
             className="relative bg-gradient-to-b from-[#FFFDFD] to-[#FFF5F6] border border-[#FFF1F3] rounded-[20px] p-8 shadow-[0px_10px_40px_rgba(0,0,0,0.03)] flex flex-col justify-start overflow-hidden min-h-[420px] h-full"

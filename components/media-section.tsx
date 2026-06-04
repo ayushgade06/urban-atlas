@@ -107,7 +107,7 @@ const mediaItems = [
 export default function MediaSection() {
   return (
     <section className="py-14 bg-[#FFF8F8] w-full" id="media">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* LEFT COLUMN: Media description and Email bar (5 cols) */}
           <div className="lg:col-span-4 flex flex-col items-start">
@@ -138,7 +138,7 @@ export default function MediaSection() {
 
           {/* CENTER COLUMN: Horizontal list of 5 icons (4 cols) */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="flex flex-row items-start justify-between w-full gap-2">
+            <div className="flex flex-row flex-wrap lg:flex-nowrap items-start justify-center lg:justify-between w-full gap-4 sm:gap-6 lg:gap-2">
               {mediaItems.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
@@ -186,7 +186,7 @@ export default function MediaSection() {
 
               <MotionLink
                 href="/channel-partners"
-                className="mt-4 inline-flex items-center justify-center gap-2 border-2 border-[#FF2D3F] text-[#FF2D3F] hover:bg-[#FF2D3F] hover:text-white rounded-[14px] px-[22px] py-[11px] text-[13px] font-extrabold transition-all duration-200"
+                className="mt-4 self-center inline-flex items-center justify-center gap-2 border-2 border-[#FF2D3F] text-[#FF2D3F] hover:bg-[#FF2D3F] hover:text-white rounded-[14px] px-[22px] py-[11px] text-[13px] font-extrabold transition-all duration-200"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

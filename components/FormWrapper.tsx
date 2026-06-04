@@ -23,8 +23,8 @@ export default function FormWrapper({
       <Navbar />
 
       {/* Main Content Area */}
-      <main className="flex-grow pt-10 pb-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex flex-col items-center">
+      <main className="flex-grow py-8 md:pt-10 md:pb-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 flex flex-col items-center">
           
           {/* Header Block */}
           <div className="text-center max-w-3xl mt-6 mb-10 flex flex-col items-center">
@@ -42,7 +42,7 @@ export default function FormWrapper({
           </div>
 
           {/* Form Card Container */}
-          <div className="w-full max-w-[640px]">
+          <div className="w-full md:max-w-xl lg:max-w-2xl mx-auto">
             <div className="bg-white border border-[#F3F4F6] rounded-[20px] shadow-[0px_10px_40px_rgba(0,0,0,0.03)] p-6 sm:p-10">
               {children}
             </div>

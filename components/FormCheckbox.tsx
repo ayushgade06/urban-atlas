@@ -34,7 +34,7 @@ export default function FormCheckbox({
       <label className="block text-[14px] font-bold text-[#111827] mb-3 select-none">
         {label}
       </label>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 lg:grid lg:grid-cols-3">
         {options.map((option) => {
           const isChecked = selectedValues.includes(option)
           return (
@@ -43,7 +43,7 @@ export default function FormCheckbox({
               type="button"
               onClick={() => handleToggle(option)}
               disabled={disabled}
-              className={`flex items-center gap-3 p-3.5 rounded-[14px] border text-left transition-all duration-200 cursor-pointer select-none
+              className={`w-full sm:w-auto lg:w-full flex items-center gap-3 p-3.5 rounded-[14px] border text-left transition-all duration-200 cursor-pointer select-none
                 ${
                   isChecked
                     ? 'border-[#FF2D3F]/40 bg-[#FFF1F3]/30 text-[#111827] shadow-[0px_4px_12px_rgba(255,45,63,0.03)]'

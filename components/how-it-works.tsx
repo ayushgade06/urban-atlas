@@ -61,14 +61,14 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="py-14 bg-[#FFF8F8] w-full" id="how-it-works">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Title */}
         <h2 className="text-[32px] font-extrabold text-center text-[#111827] tracking-tight mb-10">
           How Urban Atlas <span className="text-[#FF2D3F]">Works</span>
         </h2>
 
         {/* Single large card containing all steps */}
-        <div className="bg-white border border-[#F3F4F6] rounded-[24px] p-7 lg:p-10 shadow-[0px_4px_20px_rgba(0,0,0,0.02)] max-w-[1100px] mx-auto relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4">
+        <div className="bg-white border border-[#F3F4F6] rounded-[24px] p-7 lg:p-10 shadow-[0px_4px_20px_rgba(0,0,0,0.02)] max-w-[1100px] mx-auto relative grid grid-cols-1 md:grid-cols-3 lg:flex lg:flex-row items-stretch lg:items-center justify-items-center lg:justify-between gap-8 lg:gap-4">
           {steps.map(({ num, icon: Icon, title, desc }, i) => (
             <div key={num} className="flex items-center gap-4 lg:gap-8 flex-1 relative">
               <div className="flex flex-row items-start gap-5">
