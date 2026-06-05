@@ -48,7 +48,7 @@ export default function CommunitySection() {
 
             <div className="pt-2">
               <a
-                href="https://wa.me/910000000000"
+                href="https://wa.me/918375884211"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] hover:bg-[#20ba5a] px-8 py-4 text-[15px] font-bold text-white shadow-md hover:shadow-lg transition-all duration-200"

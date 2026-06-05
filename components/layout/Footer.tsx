@@ -129,14 +129,14 @@ export default function Footer() {
           <ul className="flex flex-col gap-3 text-sm text-[#6A6A6A]">
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-[#FF385C]" />
-              <a href="tel:+919354437773" className="hover:text-[#222222] transition-colors">
-                +91 93544 37773
+              <a href="tel:+918375884211" className="hover:text-[#222222] transition-colors">
+                +91 8375884211
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#FF385C]" />
-              <a href="mailto:hello@urbanatlas.in" className="hover:text-[#222222] transition-colors">
-                hello@urbanatlas.in
+              <a href="mailto:email@urbanatlas.in" className="hover:text-[#222222] transition-colors">
+                email@urbanatlas.in
               </a>
             </li>
             <li className="flex items-center gap-2">

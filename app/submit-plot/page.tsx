@@ -46,7 +46,7 @@ export default function SubmitPlotPage() {
   const [isSuccess, setIsSuccess] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
-  const waNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '910000000000'
+  const waNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '918375884211'
   const waDirectUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(
     'Hi Urban Atlas, I want to submit my plot'
   )}`

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { gsap } from '@/lib/gsap'
 
-const WA_LINK = 'https://wa.me/910000000000?text=Hi%2C%20I%27m%20interested%20in%20verified%20resale%20plots%20in%20Lucknow'
+const WA_LINK = 'https://wa.me/918375884211?text=Hi%2C%20I%27m%20interested%20in%20verified%20resale%20plots%20in%20Lucknow'
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (

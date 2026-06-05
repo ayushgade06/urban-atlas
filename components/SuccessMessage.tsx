@@ -20,7 +20,7 @@ export default function SuccessMessage({
   homeBtnLabel = 'Back to Homepage',
 }: SuccessMessageProps) {
   // Read WhatsApp number from env var
-  const waNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '910000000000'
+  const waNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '918375884211'
   const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(whatsappText)}`
 
   return (

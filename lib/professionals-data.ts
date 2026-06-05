@@ -17,7 +17,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'LDA Map Approvals & Modern Villa Designs',
     experience: '12 Years',
     localities: ['Gomti Nagar', 'Shaheed Path', 'Indira Nagar'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -27,7 +27,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Land Title Search & LDA Property Verification',
     experience: '18 Years',
     localities: ['Gomti Nagar', 'Jankipuram', 'Awas Vikas'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -37,7 +37,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Turnkey Residential Construction & Plotted Site Work',
     experience: '8 Years',
     localities: ['Jankipuram Vistar', 'Awas Vikas', 'Jankipuram'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -47,7 +47,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Boundary Surveying & Land Layout Demarcation',
     experience: '15 Years',
     localities: ['Shaheed Path', 'Gomti Nagar', 'Jankipuram Vistar'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -57,7 +57,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Eco-Friendly Residential Layouts & Interior Architecture',
     experience: '9 Years',
     localities: ['Indira Nagar', 'Gomti Nagar', 'Awas Vikas'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -67,7 +67,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Leasehold to Freehold Registry & Stamp Duty Audits',
     experience: '11 Years',
     localities: ['Awas Vikas', 'Indira Nagar', 'Jankipuram'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -77,7 +77,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Premium Duplex Construction & Foundation Structuring',
     experience: '14 Years',
     localities: ['Gomti Nagar', 'Shaheed Path'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -87,7 +87,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Topographical Land Surveying & Contour Mapping',
     experience: '10 Years',
     localities: ['Jankipuram Vistar', 'Jankipuram', 'Indira Nagar'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -97,7 +97,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'Vastu-Compliant Plotted Villa Concept Architect',
     experience: '7 Years',
     localities: ['Shaheed Path', 'Jankipuram Vistar', 'Awas Vikas'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   },
   {
@@ -107,7 +107,7 @@ export const PROFESSIONALS: Professional[] = [
     specialization: 'RERA Disputes & Plot Succession Legal Clearances',
     experience: '22 Years',
     localities: ['Gomti Nagar', 'Indira Nagar', 'Awas Vikas'],
-    phone: '910000000000',
+    phone: '918375884211',
     verified: true
   }
 ]

@@ -127,10 +127,10 @@ export default function MediaSection() {
               <div className="text-[13px] font-bold text-[#4B5563]">
                 For media enquiries:{' '}
                 <a
-                  href="mailto:media@urbanatlas.in"
+                  href="mailto:email@urbanatlas.in"
                   className="text-[#FF2D3F] hover:underline underline-offset-4"
                 >
-                  media@urbanatlas.in
+                  email@urbanatlas.in
                 </a>
               </div>
             </div>

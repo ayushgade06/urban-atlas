@@ -75,14 +75,14 @@ export default function Footer() {
                 <div className="w-[30px] h-[30px] rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
                   <WhatsAppIcon className="h-4.5 w-4.5 text-[#25D366]" />
                 </div>
-                <span>+91 00000 00000</span>
+                <span>+91 8375884211</span>
               </li>
               <li className="flex items-center gap-3 text-[14px] font-bold text-[#4B5563]">
                 <div className="w-[30px] h-[30px] rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
                   <EnvelopeIcon className="h-4 w-4" />
                 </div>
-                <a href="mailto:hello@urbanatlas.in" className="hover:text-[#FF2D3F] transition-colors">
-                  hello@urbanatlas.in
+                <a href="mailto:email@urbanatlas.in" className="hover:text-[#FF2D3F] transition-colors">
+                  email@urbanatlas.in
                 </a>
               </li>
               <li className="flex items-center gap-3 text-[14px] font-bold text-[#6B7280]">
